@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CarPredictor.Api/CarPredictor.Api.csproj" />
+    <Project Path="src/CarPredictor.Core/CarPredictor.Core.csproj" />
+    <Project Path="src/CarPredictor.Data/CarPredictor.Data.csproj" />
+    <Project Path="src/CarPredictor.External/CarPredictor.External.csproj" />
+    <Project Path="src/CarPredictor.Rules/CarPredictor.Rules.csproj" />
+    <Project Path="src/CarPredictor.Services/CarPredictor.Services.csproj" />
+  </Folder>
+</Solution>

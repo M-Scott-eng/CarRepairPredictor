@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarPredictor.Core\CarPredictor.Core.csproj" />
+    <ProjectReference Include="..\CarPredictor.Data\CarPredictor.Data.csproj" />
+    <ProjectReference Include="..\CarPredictor.Services\CarPredictor.Services.csproj" />
+    <ProjectReference Include="..\CarPredictor.External\CarPredictor.External.csproj" />
+  </ItemGroup>
+
+</Project>

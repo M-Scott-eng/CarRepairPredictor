@@ -1,0 +1,19 @@
+@CarPredictor_Api_HostAddress = http://localhost:5235
+
+### Health Check
+GET {{CarPredictor_Api_HostAddress}}/api/v1/health
+Accept: application/json
+
+### Get All Manufacturers
+GET {{CarPredictor_Api_HostAddress}}/api/v1/reference/manufacturers
+Accept: application/json
+
+### Get Models for Manufacturer (replace {manufacturerId} with actual ID)
+GET {{CarPredictor_Api_HostAddress}}/api/v1/reference/manufacturers/1/models
+Accept: application/json
+
+### Get Years for Model (replace {modelId} with actual ID)
+GET {{CarPredictor_Api_HostAddress}}/api/v1/reference/models/1/years
+Accept: application/json
+
+###
