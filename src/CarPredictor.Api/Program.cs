@@ -1,6 +1,9 @@
 using CarPredictor.Core.Interfaces;
 using CarPredictor.Data;
 using CarPredictor.Data.Repositories;
+using CarPredictor.Rules.Engine;
+using CarPredictor.Rules.Interfaces;
+using CarPredictor.Rules.Providers;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +33,10 @@ builder.Services.AddScoped<IVehicleModelRepository, VehicleModelRepository>();
 builder.Services.AddScoped<IFailurePatternRepository, FailurePatternRepository>();
 builder.Services.AddScoped<IRepairCostRepository, RepairCostRepository>();
 builder.Services.AddScoped<IRegionRepository, RegionRepository>();
+
+// Register rule engine services
+builder.Services.AddSingleton<IRuleProvider, JsonRuleProvider>();
+builder.Services.AddSingleton<IRuleEngine, PredictionEngine>();
 
 var app = builder.Build();
 

@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CarPredictor.Core\CarPredictor.Core.csproj" />
     <ProjectReference Include="..\CarPredictor.Data\CarPredictor.Data.csproj" />
+    <ProjectReference Include="..\CarPredictor.Rules\CarPredictor.Rules.csproj" />
     <ProjectReference Include="..\CarPredictor.Services\CarPredictor.Services.csproj" />
     <ProjectReference Include="..\CarPredictor.External\CarPredictor.External.csproj" />
   </ItemGroup>
