@@ -1,0 +1,331 @@
+{
+  "rules": [
+    {
+      "ruleId": "AUDI-A4-B8-001",
+      "ruleName": "2.0 TFSI Oil Consumption",
+      "description": "Excessive oil consumption due to piston ring design. Some engines use 1L per 1000 miles. TSB issued.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A4",
+        "generation": "B8",
+        "yearMin": 2008,
+        "yearMax": 2012,
+        "engineCodes": ["CAEB", "CDNC", "CDNB"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "mileageMax": 150000
+      },
+      "probability": {
+        "base": 0.35,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.75
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 1200,
+          "partsMax": 2500,
+          "labourHoursMin": 12,
+          "labourHoursMax": 18
+        }
+      },
+      "severity": 3,
+      "isRecall": false,
+      "dataSource": "VAG TSB / Class Action Data",
+      "confidence": 0.94,
+      "sampleSize": 25000,
+      "tags": ["oil consumption", "piston rings", "TFSI"]
+    },
+    {
+      "ruleId": "AUDI-A4-B8-002",
+      "ruleName": "Timing Chain Tensioner Failure",
+      "description": "Upper timing chain tensioner can fail causing timing issues. Early cars most affected before revised part.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A4",
+        "generation": "B8",
+        "yearMin": 2008,
+        "yearMax": 2011,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "mileageMax": 130000,
+        "peakMileage": 90000
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 600,
+          "partsMax": 1000,
+          "labourHoursMin": 6,
+          "labourHoursMax": 10
+        }
+      },
+      "severity": 4,
+      "dataSource": "VAG TSB / Workshop",
+      "confidence": 0.88,
+      "sampleSize": 8000
+    },
+    {
+      "ruleId": "AUDI-A4-B8-003",
+      "ruleName": "DSG Mechatronic Unit Failure",
+      "description": "S-Tronic (DSG) gearbox mechatronic unit can fail causing jerky shifts, limp mode or no drive.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A4",
+        "generation": "B8",
+        "yearMin": 2008,
+        "yearMax": 2015,
+        "transmissions": ["Automatic", "S-Tronic", "DSG"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 1200,
+          "partsMax": 2000,
+          "labourHoursMin": 4,
+          "labourHoursMax": 6
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82,
+      "sampleSize": 5500
+    },
+    {
+      "ruleId": "AUDI-A4-B8-004",
+      "ruleName": "Water Pump / Thermostat Housing Leak",
+      "description": "Plastic thermostat housing and water pump prone to leaking. Common at junctions with metal pipes.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A4",
+        "generation": "B8",
+        "yearMin": 2008,
+        "yearMax": 2015
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5,
+        "motTriggerCodes": ["8.4"]
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "motBoost": 0.15,
+        "maxProbability": 0.70
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 180,
+          "partsMax": 350,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT/Workshop Data",
+      "confidence": 0.86,
+      "motDefectCodes": ["8.4.1"]
+    },
+    {
+      "ruleId": "AUDI-A4-B8-005",
+      "ruleName": "Control Arm Bushes",
+      "description": "Front lower control arm bushes wear causing clunking and vague steering. Common MOT failure.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A4",
+        "generation": "B8",
+        "yearMin": 2008,
+        "yearMax": 2015
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4,
+        "motTriggerCodes": ["5.3"]
+      },
+      "probability": {
+        "base": 0.32,
+        "mileageMultiplier": 0.004,
+        "ageMultiplier": 0.025,
+        "motBoost": 0.20,
+        "maxProbability": 0.85
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 150,
+          "partsMax": 350,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.92,
+      "sampleSize": 18000,
+      "motDefectCodes": ["5.3.3", "5.3.4"]
+    },
+    {
+      "ruleId": "AUDI-A4-B8-006",
+      "ruleName": "PCV Valve Failure",
+      "description": "Positive Crankcase Ventilation valve/diaphragm fails causing oil leaks and whistling noise.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A4",
+        "generation": "B8",
+        "yearMin": 2008,
+        "yearMax": 2015,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 150,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.84
+    },
+    {
+      "ruleId": "AUDI-A4-B8-007",
+      "ruleName": "Carbon Build-up (Direct Injection)",
+      "description": "Direct injection engines suffer carbon build-up on intake valves causing rough running and misfires.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A4",
+        "generation": "B8",
+        "yearMin": 2008,
+        "yearMax": 2015,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.30,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.70
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 50,
+          "partsMax": 100,
+          "labourHoursMin": 3,
+          "labourHoursMax": 5
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.87,
+      "tags": ["carbon", "direct injection", "TFSI"]
+    },
+    {
+      "ruleId": "AUDI-A4-B8-008",
+      "ruleName": "DPF Issues (2.0 TDI)",
+      "description": "DPF blockage common on short journey diesels. Warning light and limp mode. May need forced regen or replacement.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A4",
+        "generation": "B8",
+        "yearMin": 2008,
+        "yearMax": 2015,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5,
+        "motTriggerCodes": ["8.2"]
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.02,
+        "motBoost": 0.25,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 300,
+          "partsMax": 1800,
+          "labourHoursMin": 1,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.86,
+      "motDefectCodes": ["8.2.1.2", "8.2.2.2"]
+    },
+    {
+      "ruleId": "AUDI-A4-B8-009",
+      "ruleName": "High Pressure Fuel Pump (HPFP)",
+      "description": "High pressure fuel pump can fail causing starting issues and loss of power. Common on 2.0 TFSI.",
+      "category": "Fuel System",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A4",
+        "generation": "B8",
+        "yearMin": 2008,
+        "yearMax": 2013,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "mileageMax": 120000
+      },
+      "probability": {
+        "base": 0.15,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 700,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.80
+    }
+  ]
+}

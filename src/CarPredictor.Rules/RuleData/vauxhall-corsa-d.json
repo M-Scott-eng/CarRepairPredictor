@@ -1,0 +1,369 @@
+{
+  "rules": [
+    {
+      "ruleId": "VAUXHALL-CORSA-D-001",
+      "ruleName": "Timing Chain Failure (1.0/1.2/1.4)",
+      "description": "Timing chain and tensioner wear causing rattle and potential engine damage. Very common issue.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Corsa",
+        "generation": "D",
+        "yearMin": 2006,
+        "yearMax": 2014,
+        "engineCodes": ["A10XEP", "A12XER", "A14XER", "Z10XEP", "Z12XEP", "Z14XEP"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "mileageMax": 150000,
+        "peakMileage": 80000
+      },
+      "probability": {
+        "base": 0.35,
+        "mileageMultiplier": 0.005,
+        "maxProbability": 0.85
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 300,
+          "partsMax": 600,
+          "labourHoursMin": 5,
+          "labourHoursMax": 8
+        }
+      },
+      "severity": 4,
+      "isRecall": false,
+      "dataSource": "MOT/Workshop Data Analysis",
+      "confidence": 0.94,
+      "sampleSize": 45000,
+      "tags": ["timing chain", "rattle", "catastrophic"]
+    },
+    {
+      "ruleId": "VAUXHALL-CORSA-D-002",
+      "ruleName": "Heater Matrix Failure",
+      "description": "Heater matrix leaks coolant into cabin causing fogged windows and sweet smell. Dashboard removal required.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Corsa",
+        "generation": "D",
+        "yearMin": 2006,
+        "yearMax": 2014
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.15,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 200,
+          "labourHoursMin": 6,
+          "labourHoursMax": 10
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82,
+      "sampleSize": 8000
+    },
+    {
+      "ruleId": "VAUXHALL-CORSA-D-003",
+      "ruleName": "EPS (Electric Power Steering) Failure",
+      "description": "Electric power steering column can fail causing heavy steering or complete loss of assistance.",
+      "category": "Steering",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Corsa",
+        "generation": "D",
+        "yearMin": 2006,
+        "yearMax": 2014
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "ageMin": 4,
+        "motTriggerCodes": ["2.1"]
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "motBoost": 0.25,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 800,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "MOT/Workshop Data",
+      "confidence": 0.86,
+      "sampleSize": 12000,
+      "motDefectCodes": ["2.1.3", "2.1.4"]
+    },
+    {
+      "ruleId": "VAUXHALL-CORSA-D-004",
+      "ruleName": "Front Suspension Springs",
+      "description": "Front coil springs prone to corrosion and snapping. Very common MOT failure on UK Corsas.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Corsa",
+        "generation": "D",
+        "yearMin": 2006,
+        "yearMax": 2014
+      },
+      "conditions": {
+        "mileageMin": 30000,
+        "ageMin": 4,
+        "motTriggerCodes": ["5.3"]
+      },
+      "probability": {
+        "base": 0.30,
+        "mileageMultiplier": 0.004,
+        "ageMultiplier": 0.035,
+        "motBoost": 0.15,
+        "maxProbability": 0.80
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 50,
+          "partsMax": 100,
+          "labourHoursMin": 0.75,
+          "labourHoursMax": 1.5
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.93,
+      "sampleSize": 55000,
+      "motDefectCodes": ["5.3.1"]
+    },
+    {
+      "ruleId": "VAUXHALL-CORSA-D-005",
+      "ruleName": "Thermostat Housing Leak",
+      "description": "Plastic thermostat housing cracks or gasket leaks causing coolant loss and potential overheating.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Corsa",
+        "generation": "D",
+        "yearMin": 2006,
+        "yearMax": 2014,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5,
+        "motTriggerCodes": ["8.4"]
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "motBoost": 0.15,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 40,
+          "partsMax": 80,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT/Workshop Data",
+      "confidence": 0.87,
+      "motDefectCodes": ["8.4.1"]
+    },
+    {
+      "ruleId": "VAUXHALL-CORSA-D-006",
+      "ruleName": "Water Ingress (Rear Lights)",
+      "description": "Rear light cluster seals fail allowing water into boot/electrical areas. Can cause electrical faults.",
+      "category": "Electrical",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Corsa",
+        "generation": "D",
+        "yearMin": 2006,
+        "yearMax": 2014
+      },
+      "conditions": {
+        "ageMin": 5,
+        "motTriggerCodes": ["4.1"]
+      },
+      "probability": {
+        "base": 0.18,
+        "ageMultiplier": 0.025,
+        "motBoost": 0.15,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 20,
+          "partsMax": 60,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1
+        }
+      },
+      "severity": 1,
+      "dataSource": "MOT/Workshop Data",
+      "confidence": 0.80,
+      "motDefectCodes": ["4.1.1", "4.1.2"]
+    },
+    {
+      "ruleId": "VAUXHALL-CORSA-D-007",
+      "ruleName": "Ignition Coil Pack Failure",
+      "description": "Coil pack fails causing misfires and engine management light. Common on 1.2 and 1.4 petrol.",
+      "category": "Ignition",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Corsa",
+        "generation": "D",
+        "yearMin": 2006,
+        "yearMax": 2014,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 60,
+          "partsMax": 120,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.86
+    },
+    {
+      "ruleId": "VAUXHALL-CORSA-D-008",
+      "ruleName": "Clutch Master Cylinder Leak",
+      "description": "Clutch master cylinder fails causing soft/spongy pedal or clutch failure.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Corsa",
+        "generation": "D",
+        "yearMin": 2006,
+        "yearMax": 2014,
+        "transmissions": ["Manual"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.15,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.45
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 150,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.80
+    },
+    {
+      "ruleId": "VAUXHALL-CORSA-D-009",
+      "ruleName": "Rear Axle Bushes",
+      "description": "Rear axle/trailing arm bushes wear causing clunking over bumps and vague handling.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Corsa",
+        "generation": "D",
+        "yearMin": 2006,
+        "yearMax": 2014
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5,
+        "motTriggerCodes": ["5.3"]
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "motBoost": 0.15,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 150,
+          "labourHoursMin": 2,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.85,
+      "motDefectCodes": ["5.3.3"]
+    },
+    {
+      "ruleId": "VAUXHALL-CORSA-D-010",
+      "ruleName": "EGR Cooler Failure (CDTI)",
+      "description": "EGR cooler leaks internally causing coolant loss into exhaust. White smoke and overheating.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Corsa",
+        "generation": "D",
+        "yearMin": 2010,
+        "yearMax": 2014,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 250,
+          "partsMax": 500,
+          "labourHoursMin": 3,
+          "labourHoursMax": 5
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82
+    }
+  ]
+}

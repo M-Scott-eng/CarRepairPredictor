@@ -1,0 +1,305 @@
+{
+  "rules": [
+    {
+      "ruleId": "BMW-E90-001",
+      "ruleName": "N47 Timing Chain Failure",
+      "description": "Notorious timing chain and tensioner wear on N47 diesel engines. Can cause catastrophic engine damage if chain snaps.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "3 Series",
+        "generation": "E90",
+        "yearMin": 2007,
+        "yearMax": 2012,
+        "engineCodes": ["N47D20A", "N47D20C"],
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "mileageMax": 180000,
+        "peakMileage": 100000
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.005,
+        "maxProbability": 0.85
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 800,
+          "partsMax": 1200,
+          "labourHoursMin": 8,
+          "labourHoursMax": 12
+        },
+        "UK-LON": {
+          "partsMin": 800,
+          "partsMax": 1200,
+          "labourHoursMin": 8,
+          "labourHoursMax": 12,
+          "labourRate": 85
+        }
+      },
+      "severity": 4,
+      "isRecall": false,
+      "dataSource": "MOT/Workshop Data Analysis",
+      "confidence": 0.92,
+      "sampleSize": 15000,
+      "tags": ["timing", "chain", "catastrophic"],
+      "motDefectCodes": []
+    },
+    {
+      "ruleId": "BMW-E90-002",
+      "ruleName": "Swirl Flap Failure",
+      "description": "Intake swirl flaps can break and debris enters engine causing serious damage. Common on diesel variants.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "3 Series",
+        "generation": "E90",
+        "yearMin": 2005,
+        "yearMax": 2011,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 80000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.15,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 800,
+          "labourHoursMin": 4,
+          "labourHoursMax": 6
+        }
+      },
+      "severity": 3,
+      "dataSource": "MOT/Workshop Data Analysis",
+      "confidence": 0.85,
+      "sampleSize": 8500
+    },
+    {
+      "ruleId": "BMW-E90-003",
+      "ruleName": "Electric Water Pump Failure",
+      "description": "Electric water pump prone to failure. Can cause overheating and head gasket damage if not addressed.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "3 Series",
+        "generation": "E90",
+        "yearMin": 2005,
+        "yearMax": 2012,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "mileageMax": 150000
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.70
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 250,
+          "partsMax": 450,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Manufacturer TSB / Workshop",
+      "confidence": 0.88,
+      "sampleSize": 12000
+    },
+    {
+      "ruleId": "BMW-E90-004",
+      "ruleName": "VANOS Solenoid Issues",
+      "description": "Variable valve timing solenoids wear causing rough running, poor fuel economy and reduced performance.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "3 Series",
+        "generation": "E90",
+        "yearMin": 2005,
+        "yearMax": 2012
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 150,
+          "partsMax": 300,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82
+    },
+    {
+      "ruleId": "BMW-E90-005",
+      "ruleName": "Injector Seal Leaks",
+      "description": "Diesel injector seals perish causing black diesel gunk and poor running. Common MOT advisory.",
+      "category": "Fuel System",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "3 Series",
+        "generation": "E90",
+        "yearMin": 2005,
+        "yearMax": 2012,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 5,
+        "motTriggerCodes": ["8.2"]
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.003,
+        "motBoost": 0.25,
+        "maxProbability": 0.75
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 160,
+          "labourHoursMin": 2,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.87,
+      "motDefectCodes": ["8.2.1.2"]
+    },
+    {
+      "ruleId": "BMW-E90-006",
+      "ruleName": "Rear Suspension Bushes",
+      "description": "Rear subframe and trailing arm bushes wear causing vague handling and MOT failures.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "3 Series",
+        "generation": "E90",
+        "yearMin": 2005,
+        "yearMax": 2012
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5,
+        "motTriggerCodes": ["5.3"]
+      },
+      "probability": {
+        "base": 0.30,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.025,
+        "motBoost": 0.20,
+        "maxProbability": 0.80
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 200,
+          "partsMax": 400,
+          "labourHoursMin": 3,
+          "labourHoursMax": 5
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.90,
+      "motDefectCodes": ["5.3.3", "5.3.4"]
+    },
+    {
+      "ruleId": "BMW-E90-007",
+      "ruleName": "DPF Regeneration Issues",
+      "description": "Diesel Particulate Filter blockage from short journeys. Common in city-driven diesels.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "3 Series",
+        "generation": "E90",
+        "yearMin": 2007,
+        "yearMax": 2012,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 6,
+        "motTriggerCodes": ["8.2"]
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.02,
+        "motBoost": 0.30,
+        "maxProbability": 0.70
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 300,
+          "partsMax": 1500,
+          "labourHoursMin": 1,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.85,
+      "motDefectCodes": ["8.2.1.2", "8.2.2.2"]
+    },
+    {
+      "ruleId": "BMW-E90-008",
+      "ruleName": "Oil Filter Housing Gasket Leak",
+      "description": "Oil filter housing gasket degrades causing oil leaks onto engine and exhaust.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "3 Series",
+        "generation": "E90",
+        "yearMin": 2005,
+        "yearMax": 2012
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 6,
+        "motTriggerCodes": ["8.4"]
+      },
+      "probability": {
+        "base": 0.28,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "motBoost": 0.15,
+        "maxProbability": 0.75
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 30,
+          "partsMax": 80,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT/Workshop Data",
+      "confidence": 0.88,
+      "motDefectCodes": ["8.4.1"]
+    }
+  ]
+}

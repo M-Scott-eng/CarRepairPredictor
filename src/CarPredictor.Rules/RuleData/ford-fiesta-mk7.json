@@ -1,0 +1,329 @@
+{
+  "rules": [
+    {
+      "ruleId": "FORD-FIESTA-MK7-001",
+      "ruleName": "PowerShift (DPS6) Transmission",
+      "description": "Dual-clutch PowerShift gearbox notorious for shuddering, jerky shifts, and clutch failure. Class action lawsuits filed.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Fiesta",
+        "generation": "Mk7",
+        "yearMin": 2011,
+        "yearMax": 2017,
+        "transmissions": ["Automatic", "PowerShift", "DPS6"]
+      },
+      "conditions": {
+        "mileageMin": 30000
+      },
+      "probability": {
+        "base": 0.40,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.80
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 800,
+          "partsMax": 2000,
+          "labourHoursMin": 6,
+          "labourHoursMax": 10
+        }
+      },
+      "severity": 4,
+      "isRecall": false,
+      "dataSource": "Class Action Data / Workshop",
+      "confidence": 0.95,
+      "sampleSize": 35000,
+      "tags": ["powershift", "dps6", "clutch", "transmission"]
+    },
+    {
+      "ruleId": "FORD-FIESTA-MK7-002",
+      "ruleName": "1.0 EcoBoost Coolant Hose",
+      "description": "Degas hose can split causing overheating. Recall issued for some models.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Fiesta",
+        "generation": "Mk7",
+        "yearMin": 2012,
+        "yearMax": 2016,
+        "engineCodes": ["M1DA", "M2DA", "SFJA", "SFJB", "YYJA", "YYJB"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 30000,
+        "ageMin": 3
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 50,
+          "partsMax": 150,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 3,
+      "isRecall": true,
+      "dataSource": "Ford Safety Recall 17S10",
+      "confidence": 0.92,
+      "sampleSize": 12000,
+      "tags": ["ecoboost", "coolant", "overheating"]
+    },
+    {
+      "ruleId": "FORD-FIESTA-MK7-003",
+      "ruleName": "Door Latch Failure",
+      "description": "Door latches can fail to close properly or open unexpectedly. Safety recall issued.",
+      "category": "Body",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Fiesta",
+        "generation": "Mk7",
+        "yearMin": 2011,
+        "yearMax": 2016
+      },
+      "conditions": {
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.15,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 180,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 3,
+      "isRecall": true,
+      "dataSource": "Ford Safety Recall",
+      "confidence": 0.88
+    },
+    {
+      "ruleId": "FORD-FIESTA-MK7-004",
+      "ruleName": "Clutch Slave Cylinder Leak",
+      "description": "Manual transmission clutch slave cylinder can leak causing clutch failure or difficult gear selection.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Fiesta",
+        "generation": "Mk7",
+        "yearMin": 2008,
+        "yearMax": 2017,
+        "transmissions": ["Manual"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 200,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82
+    },
+    {
+      "ruleId": "FORD-FIESTA-MK7-005",
+      "ruleName": "Front Suspension Springs",
+      "description": "Front coil springs prone to snapping, especially on potholed UK roads. Common MOT failure.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Fiesta",
+        "generation": "Mk7",
+        "yearMin": 2008,
+        "yearMax": 2017
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "ageMin": 4,
+        "motTriggerCodes": ["5.3"]
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.03,
+        "motBoost": 0.15,
+        "maxProbability": 0.70
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 60,
+          "partsMax": 120,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.90,
+      "sampleSize": 22000,
+      "motDefectCodes": ["5.3.1"]
+    },
+    {
+      "ruleId": "FORD-FIESTA-MK7-006",
+      "ruleName": "Rear Wheel Bearing",
+      "description": "Rear wheel bearings wear causing rumbling noise. Not serviceable - hub assembly replacement needed.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Fiesta",
+        "generation": "Mk7",
+        "yearMin": 2008,
+        "yearMax": 2017
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4,
+        "motTriggerCodes": ["5.1"]
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "motBoost": 0.20,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 150,
+          "labourHoursMin": 0.75,
+          "labourHoursMax": 1.5
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.86,
+      "motDefectCodes": ["5.1.3"]
+    },
+    {
+      "ruleId": "FORD-FIESTA-MK7-007",
+      "ruleName": "Turbo Failure (1.0 EcoBoost)",
+      "description": "Turbocharger can fail due to oil starvation or bearing wear. Often preceded by oil consumption.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Fiesta",
+        "generation": "Mk7",
+        "yearMin": 2012,
+        "yearMax": 2017,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "mileageMax": 150000
+      },
+      "probability": {
+        "base": 0.12,
+        "mileageMultiplier": 0.002,
+        "maxProbability": 0.40
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 500,
+          "partsMax": 900,
+          "labourHoursMin": 4,
+          "labourHoursMax": 6
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.78,
+      "tags": ["ecoboost", "turbo"]
+    },
+    {
+      "ruleId": "FORD-FIESTA-MK7-008",
+      "ruleName": "Ignition Coil Failure",
+      "description": "Ignition coils fail causing misfires and engine management light. Often multiple coils fail.",
+      "category": "Ignition",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Fiesta",
+        "generation": "Mk7",
+        "yearMin": 2008,
+        "yearMax": 2017,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 30,
+          "partsMax": 80,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.85
+    },
+    {
+      "ruleId": "FORD-FIESTA-MK7-009",
+      "ruleName": "EGR Valve Failure",
+      "description": "EGR valve sticks or fails causing rough running and engine management light. Common on diesels.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Fiesta",
+        "generation": "Mk7",
+        "yearMin": 2008,
+        "yearMax": 2017,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5,
+        "motTriggerCodes": ["8.2"]
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "motBoost": 0.20,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 200,
+          "partsMax": 400,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT/Workshop Data",
+      "confidence": 0.84,
+      "motDefectCodes": ["8.2.1.2"]
+    }
+  ]
+}
