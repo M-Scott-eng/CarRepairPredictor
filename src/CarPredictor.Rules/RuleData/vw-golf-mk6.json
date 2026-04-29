@@ -1,0 +1,365 @@
+{
+  "rules": [
+    {
+      "ruleId": "VW-GOLF-MK6-001",
+      "ruleName": "DSG Mechatronic Unit Failure",
+      "description": "DSG dual-clutch gearbox mechatronic unit prone to failure causing jerky shifts, loss of gears, or complete gearbox failure.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Volkswagen",
+        "model": "Golf",
+        "generation": "Mk6",
+        "yearMin": 2008,
+        "yearMax": 2012,
+        "transmissions": ["DSG", "Automatic"]
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "mileageMax": 150000,
+        "peakMileage": 80000
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.70
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 800,
+          "partsMax": 1800,
+          "labourHoursMin": 4,
+          "labourHoursMax": 8
+        }
+      },
+      "severity": 4,
+      "isRecall": false,
+      "dataSource": "Workshop Data / Owner Reports",
+      "confidence": 0.90,
+      "sampleSize": 18000,
+      "tags": ["dsg", "mechatronic", "gearbox", "transmission"]
+    },
+    {
+      "ruleId": "VW-GOLF-MK6-002",
+      "ruleName": "Timing Chain Tensioner (TSI)",
+      "description": "Early EA888 TSI engines suffer from timing chain tensioner failure. Can cause catastrophic engine damage.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Volkswagen",
+        "model": "Golf",
+        "generation": "Mk6",
+        "yearMin": 2008,
+        "yearMax": 2012,
+        "engineCodes": ["CCTA", "CAEB", "CAWB", "CBFA"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "mileageMax": 120000,
+        "peakMileage": 75000
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.005,
+        "maxProbability": 0.75
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 600,
+          "partsMax": 1200,
+          "labourHoursMin": 6,
+          "labourHoursMax": 10
+        }
+      },
+      "severity": 5,
+      "isRecall": false,
+      "dataSource": "TSB / Workshop Data",
+      "confidence": 0.92,
+      "sampleSize": 22000,
+      "tags": ["timing", "chain", "tensioner", "tsi", "catastrophic"]
+    },
+    {
+      "ruleId": "VW-GOLF-MK6-003",
+      "ruleName": "PCV Valve / Breather System",
+      "description": "PCV diaphragm fails causing oil consumption, rough idle, and check engine light. Common on TSI engines.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Volkswagen",
+        "model": "Golf",
+        "generation": "Mk6",
+        "yearMin": 2008,
+        "yearMax": 2012,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.30,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 200,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.88,
+      "sampleSize": 15000
+    },
+    {
+      "ruleId": "VW-GOLF-MK6-004",
+      "ruleName": "Water Pump Failure (Plastic Impeller)",
+      "description": "Plastic water pump impeller degrades causing coolant leak or overheating. Timing belt driven.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Volkswagen",
+        "model": "Golf",
+        "generation": "Mk6",
+        "yearMin": 2008,
+        "yearMax": 2012,
+        "fuelTypes": ["Petrol", "Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 150,
+          "partsMax": 350,
+          "labourHoursMin": 3,
+          "labourHoursMax": 5
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.85,
+      "sampleSize": 12000
+    },
+    {
+      "ruleId": "VW-GOLF-MK6-005",
+      "ruleName": "Ignition Coil Pack Failure",
+      "description": "Ignition coils fail causing misfires, rough running, and check engine light. Common on all petrol models.",
+      "category": "Ignition",
+      "vehicleMatch": {
+        "make": "Volkswagen",
+        "model": "Golf",
+        "generation": "Mk6",
+        "yearMin": 2008,
+        "yearMax": 2012,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 40,
+          "partsMax": 100,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.90,
+      "sampleSize": 20000
+    },
+    {
+      "ruleId": "VW-GOLF-MK6-006",
+      "ruleName": "Carbon Build-up (Direct Injection)",
+      "description": "Direct injection engines suffer from inlet valve carbon build-up causing rough running and power loss.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Volkswagen",
+        "model": "Golf",
+        "generation": "Mk6",
+        "yearMin": 2008,
+        "yearMax": 2012,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "peakMileage": 100000
+      },
+      "probability": {
+        "base": 0.35,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.80
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 50,
+          "partsMax": 150,
+          "labourHoursMin": 3,
+          "labourHoursMax": 6
+        }
+      },
+      "severity": 2,
+      "dataSource": "Technical Analysis",
+      "confidence": 0.87,
+      "sampleSize": 10000
+    },
+    {
+      "ruleId": "VW-GOLF-MK6-007",
+      "ruleName": "EGR Valve Failure (TDI)",
+      "description": "EGR valve clogs or fails causing loss of power, rough idle, and emissions issues. Common on diesel models.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Volkswagen",
+        "model": "Golf",
+        "generation": "Mk6",
+        "yearMin": 2008,
+        "yearMax": 2012,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.28,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 200,
+          "partsMax": 450,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT/Workshop Data",
+      "confidence": 0.88,
+      "sampleSize": 14000
+    },
+    {
+      "ruleId": "VW-GOLF-MK6-008",
+      "ruleName": "DPF Regeneration Issues",
+      "description": "Diesel particulate filter blocks on short journey use causing limp mode and warning lights.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Volkswagen",
+        "model": "Golf",
+        "generation": "Mk6",
+        "yearMin": 2008,
+        "yearMax": 2012,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 40000
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.002,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 1500,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.85,
+      "sampleSize": 11000
+    },
+    {
+      "ruleId": "VW-GOLF-MK6-009",
+      "ruleName": "Front Suspension Wishbone Bushes",
+      "description": "Front lower wishbone bushes wear causing knocking noises and MOT failure for excessive play.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Volkswagen",
+        "model": "Golf",
+        "generation": "Mk6",
+        "yearMin": 2008,
+        "yearMax": 2012
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.30,
+        "mileageMultiplier": 0.004,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.75
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 250,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.92,
+      "sampleSize": 25000,
+      "motDefectCodes": ["2.4.G.2"]
+    },
+    {
+      "ruleId": "VW-GOLF-MK6-010",
+      "ruleName": "Rear Coil Spring Breakage",
+      "description": "Rear coil springs prone to snapping. Common MOT failure on UK roads.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Volkswagen",
+        "model": "Golf",
+        "generation": "Mk6",
+        "yearMin": 2008,
+        "yearMax": 2012
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 180,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.88,
+      "sampleSize": 18000,
+      "motDefectCodes": ["2.4.A.2a"]
+    }
+  ]
+}

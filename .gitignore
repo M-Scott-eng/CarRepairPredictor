@@ -57,3 +57,7 @@ Thumbs.db
 # Rider
 .idea/
 *.sln.iml
+
+# Local settings with secrets
+appsettings.Development.json
+appsettings.*.Local.json

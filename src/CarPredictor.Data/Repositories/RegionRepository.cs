@@ -1,12 +1,11 @@
 using Dapper;
 using CarPredictor.Core.Domain;
 using CarPredictor.Core.Interfaces;
-using System.Data;
 
 namespace CarPredictor.Data.Repositories;
 
 /// <summary>
-/// Repository implementation for region data access using stored procedures.
+/// Repository implementation for region data access.
 /// </summary>
 public sealed class RegionRepository : IRegionRepository
 {
@@ -21,10 +20,18 @@ public sealed class RegionRepository : IRegionRepository
     {
         using var connection = _connectionFactory.CreateConnection();
 
-        var result = await connection.QueryAsync<Region>(
-            "sp_GetActiveRegions",
-            commandType: CommandType.StoredProcedure);
+        const string sql = """
+            SELECT region_id AS RegionId,
+                   region_code AS RegionCode,
+                   region_name AS RegionName,
+                   currency_code AS CurrencyCode,
+                   is_active AS IsActive
+            FROM region
+            WHERE is_active = true
+            ORDER BY region_name
+            """;
 
+        var result = await connection.QueryAsync<Region>(sql);
         return result.ToList();
     }
 
@@ -32,11 +39,16 @@ public sealed class RegionRepository : IRegionRepository
     {
         using var connection = _connectionFactory.CreateConnection();
 
-        var result = await connection.QuerySingleOrDefaultAsync<Region>(
-            "sp_GetRegionByCode",
-            new { RegionCode = regionCode },
-            commandType: CommandType.StoredProcedure);
+        const string sql = """
+            SELECT region_id AS RegionId,
+                   region_code AS RegionCode,
+                   region_name AS RegionName,
+                   currency_code AS CurrencyCode,
+                   is_active AS IsActive
+            FROM region
+            WHERE region_code = @RegionCode
+            """;
 
-        return result;
+        return await connection.QuerySingleOrDefaultAsync<Region>(sql, new { RegionCode = regionCode });
     }
 }

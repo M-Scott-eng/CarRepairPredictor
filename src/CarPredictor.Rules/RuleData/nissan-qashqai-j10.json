@@ -1,0 +1,359 @@
+{
+  "rules": [
+    {
+      "ruleId": "NISSAN-QASHQAI-J10-001",
+      "ruleName": "CVT Transmission Failure",
+      "description": "CVT (Continuously Variable Transmission) suffers from juddering, overheating, and premature failure.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Nissan",
+        "model": "Qashqai",
+        "generation": "J10",
+        "yearMin": 2007,
+        "yearMax": 2013,
+        "transmissions": ["CVT", "Automatic"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "mileageMax": 140000,
+        "peakMileage": 90000
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.70
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 1200,
+          "partsMax": 3000,
+          "labourHoursMin": 8,
+          "labourHoursMax": 14
+        }
+      },
+      "severity": 5,
+      "isRecall": false,
+      "dataSource": "Nissan TSB / Owner Reports",
+      "confidence": 0.88,
+      "sampleSize": 14000,
+      "tags": ["cvt", "transmission", "overheating"]
+    },
+    {
+      "ruleId": "NISSAN-QASHQAI-J10-002",
+      "ruleName": "Timing Chain Stretch (1.6/2.0 Petrol)",
+      "description": "Timing chain stretches over time causing rattling and potential timing issues. More common on 2.0.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Nissan",
+        "model": "Qashqai",
+        "generation": "J10",
+        "yearMin": 2007,
+        "yearMax": 2013,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 80000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 900,
+          "labourHoursMin": 5,
+          "labourHoursMax": 9
+        }
+      },
+      "severity": 4,
+      "dataSource": "Workshop Data",
+      "confidence": 0.84,
+      "sampleSize": 9000
+    },
+    {
+      "ruleId": "NISSAN-QASHQAI-J10-003",
+      "ruleName": "Turbo Failure (1.5 dCi)",
+      "description": "Renault-sourced 1.5 dCi turbocharger fails due to oil starvation or worn bearings.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Nissan",
+        "model": "Qashqai",
+        "generation": "J10",
+        "yearMin": 2007,
+        "yearMax": 2013,
+        "engineCodes": ["K9K"],
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.58
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 600,
+          "partsMax": 1400,
+          "labourHoursMin": 4,
+          "labourHoursMax": 8
+        }
+      },
+      "severity": 4,
+      "dataSource": "Workshop Data",
+      "confidence": 0.86,
+      "sampleSize": 10000
+    },
+    {
+      "ruleId": "NISSAN-QASHQAI-J10-004",
+      "ruleName": "DPF Regeneration Issues",
+      "description": "Diesel particulate filter blocks on short journeys causing warning lights and limp mode.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Nissan",
+        "model": "Qashqai",
+        "generation": "J10",
+        "yearMin": 2007,
+        "yearMax": 2013,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 40000
+      },
+      "probability": {
+        "base": 0.24,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 1400,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.88,
+      "sampleSize": 12000
+    },
+    {
+      "ruleId": "NISSAN-QASHQAI-J10-005",
+      "ruleName": "Fuel Injector Issues (1.5 dCi)",
+      "description": "Diesel injectors can leak or fail causing rough running, black smoke, and poor fuel economy.",
+      "category": "Fuel System",
+      "vehicleMatch": {
+        "make": "Nissan",
+        "model": "Qashqai",
+        "generation": "J10",
+        "yearMin": 2007,
+        "yearMax": 2013,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 80000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.52
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 200,
+          "partsMax": 500,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.84,
+      "sampleSize": 8000
+    },
+    {
+      "ruleId": "NISSAN-QASHQAI-J10-006",
+      "ruleName": "Dual Mass Flywheel Failure",
+      "description": "Dual mass flywheel wears causing juddering on take-off and rattling at idle.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Nissan",
+        "model": "Qashqai",
+        "generation": "J10",
+        "yearMin": 2007,
+        "yearMax": 2013,
+        "transmissions": ["Manual"]
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.58
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 350,
+          "partsMax": 750,
+          "labourHoursMin": 4,
+          "labourHoursMax": 7
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.86,
+      "sampleSize": 10000
+    },
+    {
+      "ruleId": "NISSAN-QASHQAI-J10-007",
+      "ruleName": "Rear Tailgate Struts",
+      "description": "Tailgate gas struts fail causing boot lid to not stay open or fall down.",
+      "category": "Body",
+      "vehicleMatch": {
+        "make": "Nissan",
+        "model": "Qashqai",
+        "generation": "J10",
+        "yearMin": 2007,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.25,
+        "ageMultiplier": 0.03,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 40,
+          "partsMax": 100,
+          "labourHoursMin": 0.25,
+          "labourHoursMax": 0.5
+        }
+      },
+      "severity": 1,
+      "dataSource": "Owner Reports",
+      "confidence": 0.85,
+      "sampleSize": 15000
+    },
+    {
+      "ruleId": "NISSAN-QASHQAI-J10-008",
+      "ruleName": "Front Suspension Drop Links",
+      "description": "Anti-roll bar drop links wear causing knocking over bumps. Common MOT failure.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Nissan",
+        "model": "Qashqai",
+        "generation": "J10",
+        "yearMin": 2007,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.30,
+        "mileageMultiplier": 0.004,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.70
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 40,
+          "partsMax": 100,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1.5
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.92,
+      "sampleSize": 20000,
+      "motDefectCodes": ["2.4.G.1"]
+    },
+    {
+      "ruleId": "NISSAN-QASHQAI-J10-009",
+      "ruleName": "Handbrake Cable Seizure",
+      "description": "Handbrake cables seize in guide tubes causing ineffective handbrake. Common MOT failure.",
+      "category": "Brakes",
+      "vehicleMatch": {
+        "make": "Nissan",
+        "model": "Qashqai",
+        "generation": "J10",
+        "yearMin": 2007,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 200,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.88,
+      "sampleSize": 14000,
+      "motDefectCodes": ["3.7.B.4"]
+    },
+    {
+      "ruleId": "NISSAN-QASHQAI-J10-010",
+      "ruleName": "Steering Rack Wear",
+      "description": "Steering rack develops play causing wandering steering and vague feel.",
+      "category": "Steering",
+      "vehicleMatch": {
+        "make": "Nissan",
+        "model": "Qashqai",
+        "generation": "J10",
+        "yearMin": 2007,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.14,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.45
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 300,
+          "partsMax": 700,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data",
+      "confidence": 0.82,
+      "sampleSize": 7000
+    }
+  ]
+}

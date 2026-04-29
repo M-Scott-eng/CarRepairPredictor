@@ -1,0 +1,363 @@
+{
+  "rules": [
+    {
+      "ruleId": "VAUXHALL-ASTRA-J-001",
+      "ruleName": "Timing Belt Failure Risk",
+      "description": "1.4 and 1.6 petrol engines require timing belt replacement. Failure causes catastrophic engine damage.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Astra",
+        "generation": "J",
+        "yearMin": 2009,
+        "yearMax": 2015,
+        "engineCodes": ["A14XER", "A14NET", "A16XER", "A16LET"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 80000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.15,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 250,
+          "partsMax": 500,
+          "labourHoursMin": 4,
+          "labourHoursMax": 7
+        }
+      },
+      "severity": 5,
+      "isRecall": false,
+      "dataSource": "Manufacturer Service Schedule",
+      "confidence": 0.95,
+      "sampleSize": 25000,
+      "tags": ["timing belt", "preventative", "catastrophic"]
+    },
+    {
+      "ruleId": "VAUXHALL-ASTRA-J-002",
+      "ruleName": "Water Pump Leak",
+      "description": "Water pump leaks coolant, often fails along with timing belt. Should be replaced together.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Astra",
+        "generation": "J",
+        "yearMin": 2009,
+        "yearMax": 2015
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 200,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.87,
+      "sampleSize": 12000
+    },
+    {
+      "ruleId": "VAUXHALL-ASTRA-J-003",
+      "ruleName": "Dual Mass Flywheel Failure",
+      "description": "Dual mass flywheel wears causing juddering on take-off and rattling at idle.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Astra",
+        "generation": "J",
+        "yearMin": 2009,
+        "yearMax": 2015,
+        "transmissions": ["Manual"]
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.58
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 350,
+          "partsMax": 700,
+          "labourHoursMin": 4,
+          "labourHoursMax": 7
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.86,
+      "sampleSize": 10000
+    },
+    {
+      "ruleId": "VAUXHALL-ASTRA-J-004",
+      "ruleName": "EGR Valve Failure (CDTi)",
+      "description": "EGR valve clogs with carbon causing loss of power, rough idle, and MOT emissions failure.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Astra",
+        "generation": "J",
+        "yearMin": 2009,
+        "yearMax": 2015,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.28,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 150,
+          "partsMax": 400,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT/Workshop Data",
+      "confidence": 0.90,
+      "sampleSize": 15000
+    },
+    {
+      "ruleId": "VAUXHALL-ASTRA-J-005",
+      "ruleName": "DPF Regeneration Issues",
+      "description": "Diesel particulate filter blocks on short journeys causing limp mode and warning lights.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Astra",
+        "generation": "J",
+        "yearMin": 2009,
+        "yearMax": 2015,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 40000
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.002,
+        "maxProbability": 0.52
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 350,
+          "partsMax": 1200,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.87,
+      "sampleSize": 11000
+    },
+    {
+      "ruleId": "VAUXHALL-ASTRA-J-006",
+      "ruleName": "Turbo Failure (1.4T/1.6T)",
+      "description": "Turbocharger bearings fail or wastegate sticks causing loss of power or overboost conditions.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Astra",
+        "generation": "J",
+        "yearMin": 2009,
+        "yearMax": 2015,
+        "engineCodes": ["A14NET", "A16LET"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.15,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.48
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 500,
+          "partsMax": 1200,
+          "labourHoursMin": 4,
+          "labourHoursMax": 8
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82,
+      "sampleSize": 7000
+    },
+    {
+      "ruleId": "VAUXHALL-ASTRA-J-007",
+      "ruleName": "Front Suspension Drop Links",
+      "description": "Anti-roll bar drop links wear causing knocking over bumps. Common MOT failure.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Astra",
+        "generation": "J",
+        "yearMin": 2009,
+        "yearMax": 2015
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.30,
+        "mileageMultiplier": 0.004,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.70
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 40,
+          "partsMax": 100,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1.5
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.92,
+      "sampleSize": 25000,
+      "motDefectCodes": ["2.4.G.1"]
+    },
+    {
+      "ruleId": "VAUXHALL-ASTRA-J-008",
+      "ruleName": "Rear Coil Spring Breakage",
+      "description": "Rear coil springs prone to snapping on UK roads. Common MOT failure.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Astra",
+        "generation": "J",
+        "yearMin": 2009,
+        "yearMax": 2015
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.022,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 60,
+          "partsMax": 150,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.90,
+      "sampleSize": 18000,
+      "motDefectCodes": ["2.4.A.2a"]
+    },
+    {
+      "ruleId": "VAUXHALL-ASTRA-J-009",
+      "ruleName": "Electric Power Steering",
+      "description": "Electric power steering pump or motor can fail causing heavy steering or warning lights.",
+      "category": "Steering",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Astra",
+        "generation": "J",
+        "yearMin": 2009,
+        "yearMax": 2015
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.12,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.40
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 300,
+          "partsMax": 800,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.80,
+      "sampleSize": 5000
+    },
+    {
+      "ruleId": "VAUXHALL-ASTRA-J-010",
+      "ruleName": "Thermostat Housing Leak",
+      "description": "Plastic thermostat housing cracks and leaks coolant. Monitor coolant level regularly.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Vauxhall",
+        "model": "Astra",
+        "generation": "J",
+        "yearMin": 2009,
+        "yearMax": 2015
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.16,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.48
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 60,
+          "partsMax": 150,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.84,
+      "sampleSize": 8000
+    }
+  ]
+}

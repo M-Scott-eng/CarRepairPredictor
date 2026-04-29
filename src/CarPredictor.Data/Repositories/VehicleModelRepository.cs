@@ -1,12 +1,11 @@
 using Dapper;
 using CarPredictor.Core.Domain;
 using CarPredictor.Core.Interfaces;
-using System.Data;
 
 namespace CarPredictor.Data.Repositories;
 
 /// <summary>
-/// Repository implementation for vehicle model data access using stored procedures.
+/// Repository implementation for vehicle model data access.
 /// </summary>
 public sealed class VehicleModelRepository : IVehicleModelRepository
 {
@@ -23,11 +22,21 @@ public sealed class VehicleModelRepository : IVehicleModelRepository
     {
         using var connection = _connectionFactory.CreateConnection();
 
-        var result = await connection.QueryAsync<VehicleModel>(
-            "sp_GetVehicleModelsByManufacturer",
-            new { ManufacturerId = manufacturerId },
-            commandType: CommandType.StoredProcedure);
+        const string sql = """
+            SELECT vm.vehicle_model_id AS VehicleModelId,
+                   vm.manufacturer_id AS ManufacturerId,
+                   vm.model_name AS ModelName,
+                   vm.year_start AS YearStart,
+                   vm.year_end AS YearEnd,
+                   vm.engine_types AS EngineTypes,
+                   m.manufacturer_name AS ManufacturerName
+            FROM vehicle_model vm
+            INNER JOIN manufacturer m ON vm.manufacturer_id = m.manufacturer_id
+            WHERE vm.manufacturer_id = @ManufacturerId
+            ORDER BY vm.model_name
+            """;
 
+        var result = await connection.QueryAsync<VehicleModel>(sql, new { ManufacturerId = manufacturerId });
         return result.ToList();
     }
 
@@ -35,12 +44,20 @@ public sealed class VehicleModelRepository : IVehicleModelRepository
     {
         using var connection = _connectionFactory.CreateConnection();
 
-        var result = await connection.QuerySingleOrDefaultAsync<VehicleModel>(
-            "sp_GetVehicleModelById",
-            new { VehicleModelId = vehicleModelId },
-            commandType: CommandType.StoredProcedure);
+        const string sql = """
+            SELECT vm.vehicle_model_id AS VehicleModelId,
+                   vm.manufacturer_id AS ManufacturerId,
+                   vm.model_name AS ModelName,
+                   vm.year_start AS YearStart,
+                   vm.year_end AS YearEnd,
+                   vm.engine_types AS EngineTypes,
+                   m.manufacturer_name AS ManufacturerName
+            FROM vehicle_model vm
+            INNER JOIN manufacturer m ON vm.manufacturer_id = m.manufacturer_id
+            WHERE vm.vehicle_model_id = @VehicleModelId
+            """;
 
-        return result;
+        return await connection.QuerySingleOrDefaultAsync<VehicleModel>(sql, new { VehicleModelId = vehicleModelId });
     }
 
     public async Task<IReadOnlyList<int>> GetAvailableYearsAsync(
@@ -49,11 +66,18 @@ public sealed class VehicleModelRepository : IVehicleModelRepository
     {
         using var connection = _connectionFactory.CreateConnection();
 
-        var result = await connection.QueryAsync<int>(
-            "sp_GetAvailableYearsForModel",
-            new { VehicleModelId = vehicleModelId },
-            commandType: CommandType.StoredProcedure);
+        const string sql = """
+            SELECT generate_series(
+                (SELECT year_start FROM vehicle_model WHERE vehicle_model_id = @VehicleModelId),
+                COALESCE(
+                    (SELECT year_end FROM vehicle_model WHERE vehicle_model_id = @VehicleModelId),
+                    EXTRACT(YEAR FROM CURRENT_DATE)::INT
+                )
+            ) AS year
+            ORDER BY year DESC
+            """;
 
+        var result = await connection.QueryAsync<int>(sql, new { VehicleModelId = vehicleModelId });
         return result.ToList();
     }
 }

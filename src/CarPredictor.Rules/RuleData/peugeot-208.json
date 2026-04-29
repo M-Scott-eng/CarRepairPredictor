@@ -1,0 +1,358 @@
+{
+  "rules": [
+    {
+      "ruleId": "PEUGEOT-208-001",
+      "ruleName": "1.2 PureTech Timing Belt Failure",
+      "description": "PureTech 1.2 3-cylinder engine timing belt can fail prematurely causing catastrophic damage. Recall issued.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Peugeot",
+        "model": "208",
+        "generation": "Mk1",
+        "yearMin": 2012,
+        "yearMax": 2019,
+        "engineCodes": ["EB2", "HN01", "HNZ", "HNY"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 30000,
+        "ageMin": 3
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.004,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 800,
+          "labourHoursMin": 4,
+          "labourHoursMax": 7
+        }
+      },
+      "severity": 5,
+      "isRecall": true,
+      "dataSource": "PSA Safety Recall / Workshop Data",
+      "confidence": 0.90,
+      "sampleSize": 16000,
+      "tags": ["puretech", "timing belt", "recall", "catastrophic"]
+    },
+    {
+      "ruleId": "PEUGEOT-208-002",
+      "ruleName": "Oil Consumption (1.2 PureTech)",
+      "description": "PureTech engines can consume excessive oil between services. Monitor level regularly.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Peugeot",
+        "model": "208",
+        "generation": "Mk1",
+        "yearMin": 2012,
+        "yearMax": 2019,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 40000
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.58
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 50,
+          "partsMax": 150,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1
+        }
+      },
+      "severity": 2,
+      "dataSource": "Owner Reports",
+      "confidence": 0.82,
+      "sampleSize": 10000
+    },
+    {
+      "ruleId": "PEUGEOT-208-003",
+      "ruleName": "DPF Regeneration Issues (BlueHDi)",
+      "description": "Diesel particulate filter blocks on short journeys causing warning lights and limp mode.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Peugeot",
+        "model": "208",
+        "generation": "Mk1",
+        "yearMin": 2012,
+        "yearMax": 2019,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 40000
+      },
+      "probability": {
+        "base": 0.24,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 350,
+          "partsMax": 1200,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.88,
+      "sampleSize": 11000
+    },
+    {
+      "ruleId": "PEUGEOT-208-004",
+      "ruleName": "AdBlue System Faults",
+      "description": "AdBlue tank, heater, or pump failures causing warning lights and potential no-start condition.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Peugeot",
+        "model": "208",
+        "generation": "Mk1",
+        "yearMin": 2015,
+        "yearMax": 2019,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 30000,
+        "ageMin": 3
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.52
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 300,
+          "partsMax": 800,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.84,
+      "sampleSize": 7000
+    },
+    {
+      "ruleId": "PEUGEOT-208-005",
+      "ruleName": "EGR Valve Failure (BlueHDi)",
+      "description": "EGR valve clogs with carbon causing loss of power and engine management light.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Peugeot",
+        "model": "208",
+        "generation": "Mk1",
+        "yearMin": 2012,
+        "yearMax": 2019,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 180,
+          "partsMax": 450,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT/Workshop Data",
+      "confidence": 0.87,
+      "sampleSize": 12000
+    },
+    {
+      "ruleId": "PEUGEOT-208-006",
+      "ruleName": "Electric Power Steering",
+      "description": "Electric power steering can develop faults causing heavy steering or warning messages.",
+      "category": "Steering",
+      "vehicleMatch": {
+        "make": "Peugeot",
+        "model": "208",
+        "generation": "Mk1",
+        "yearMin": 2012,
+        "yearMax": 2019
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.12,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.38
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 350,
+          "partsMax": 900,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.80,
+      "sampleSize": 5000
+    },
+    {
+      "ruleId": "PEUGEOT-208-007",
+      "ruleName": "Clutch/Dual Mass Flywheel",
+      "description": "Clutch and dual mass flywheel wear, particularly on diesel models driven in traffic.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Peugeot",
+        "model": "208",
+        "generation": "Mk1",
+        "yearMin": 2012,
+        "yearMax": 2019,
+        "transmissions": ["Manual"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 350,
+          "partsMax": 750,
+          "labourHoursMin": 4,
+          "labourHoursMax": 7
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.85,
+      "sampleSize": 9000
+    },
+    {
+      "ruleId": "PEUGEOT-208-008",
+      "ruleName": "Water Pump Leak (PureTech)",
+      "description": "Water pump can leak on PureTech engines. Often replaced with timing belt.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Peugeot",
+        "model": "208",
+        "generation": "Mk1",
+        "yearMin": 2012,
+        "yearMax": 2019,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.16,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.48
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 250,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.83,
+      "sampleSize": 7000
+    },
+    {
+      "ruleId": "PEUGEOT-208-009",
+      "ruleName": "Front Suspension Anti-Roll Bar Links",
+      "description": "Anti-roll bar drop links wear causing knocking. Common MOT advisory.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Peugeot",
+        "model": "208",
+        "generation": "Mk1",
+        "yearMin": 2012,
+        "yearMax": 2019
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.28,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 40,
+          "partsMax": 100,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1.5
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.90,
+      "sampleSize": 18000,
+      "motDefectCodes": ["2.4.G.1"]
+    },
+    {
+      "ruleId": "PEUGEOT-208-010",
+      "ruleName": "Touchscreen Malfunction",
+      "description": "Infotainment touchscreen can become unresponsive or develop ghost touches.",
+      "category": "Electrical",
+      "vehicleMatch": {
+        "make": "Peugeot",
+        "model": "208",
+        "generation": "Mk1",
+        "yearMin": 2012,
+        "yearMax": 2019
+      },
+      "conditions": {
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.15,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.45
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 200,
+          "partsMax": 600,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "Owner Reports",
+      "confidence": 0.78,
+      "sampleSize": 5000
+    }
+  ]
+}

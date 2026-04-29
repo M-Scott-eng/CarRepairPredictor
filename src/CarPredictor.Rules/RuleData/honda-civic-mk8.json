@@ -1,0 +1,325 @@
+{
+  "rules": [
+    {
+      "ruleId": "HONDA-CIVIC-MK8-001",
+      "ruleName": "Cracked Engine Block (1.8 i-VTEC)",
+      "description": "R18A 1.8 petrol engine prone to block cracking, especially around cylinder 4. Coolant loss without visible leak.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Honda",
+        "model": "Civic",
+        "generation": "Mk8",
+        "yearMin": 2005,
+        "yearMax": 2011,
+        "engineCodes": ["R18A1", "R18A2"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.12,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.40
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 2000,
+          "partsMax": 4000,
+          "labourHoursMin": 15,
+          "labourHoursMax": 25
+        }
+      },
+      "severity": 5,
+      "isRecall": false,
+      "dataSource": "Honda TSB / Owner Forums",
+      "confidence": 0.78,
+      "sampleSize": 5000,
+      "tags": ["engine block", "crack", "catastrophic"]
+    },
+    {
+      "ruleId": "HONDA-CIVIC-MK8-002",
+      "ruleName": "A/C Compressor Failure",
+      "description": "Air conditioning compressor fails, often contaminating the entire system with debris.",
+      "category": "HVAC",
+      "vehicleMatch": {
+        "make": "Honda",
+        "model": "Civic",
+        "generation": "Mk8",
+        "yearMin": 2005,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.14,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.42
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 900,
+          "labourHoursMin": 3,
+          "labourHoursMax": 6
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82,
+      "sampleSize": 6000
+    },
+    {
+      "ruleId": "HONDA-CIVIC-MK8-003",
+      "ruleName": "Door Lock Actuator Failure",
+      "description": "Electric door lock actuators fail causing doors to not lock/unlock properly via remote or switch.",
+      "category": "Electrical",
+      "vehicleMatch": {
+        "make": "Honda",
+        "model": "Civic",
+        "generation": "Mk8",
+        "yearMin": 2005,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 200,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "Owner Reports",
+      "confidence": 0.80,
+      "sampleSize": 7000
+    },
+    {
+      "ruleId": "HONDA-CIVIC-MK8-004",
+      "ruleName": "Fuel Injector Issues (i-CDTI)",
+      "description": "Diesel fuel injectors can fail or leak causing rough running, smoke, and poor economy.",
+      "category": "Fuel System",
+      "vehicleMatch": {
+        "make": "Honda",
+        "model": "Civic",
+        "generation": "Mk8",
+        "yearMin": 2005,
+        "yearMax": 2011,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 80000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.52
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 200,
+          "partsMax": 500,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.83,
+      "sampleSize": 5500
+    },
+    {
+      "ruleId": "HONDA-CIVIC-MK8-005",
+      "ruleName": "DPF Regeneration Issues (i-CDTI)",
+      "description": "Diesel particulate filter blocks on short journeys requiring forced regeneration or replacement.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Honda",
+        "model": "Civic",
+        "generation": "Mk8",
+        "yearMin": 2005,
+        "yearMax": 2011,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 50000
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.002,
+        "maxProbability": 0.48
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 1200,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.85,
+      "sampleSize": 6500
+    },
+    {
+      "ruleId": "HONDA-CIVIC-MK8-006",
+      "ruleName": "Clutch Master Cylinder Leak",
+      "description": "Clutch master cylinder develops internal leak causing spongy pedal and eventually clutch failure.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Honda",
+        "model": "Civic",
+        "generation": "Mk8",
+        "yearMin": 2005,
+        "yearMax": 2011,
+        "transmissions": ["Manual"]
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.14,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.42
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 250,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82,
+      "sampleSize": 5000
+    },
+    {
+      "ruleId": "HONDA-CIVIC-MK8-007",
+      "ruleName": "Front Suspension Ball Joints",
+      "description": "Front lower ball joints wear causing knocking and MOT failure. Common on UK roads.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Honda",
+        "model": "Civic",
+        "generation": "Mk8",
+        "yearMin": 2005,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.58
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 200,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.88,
+      "sampleSize": 12000,
+      "motDefectCodes": ["2.4.G.2"]
+    },
+    {
+      "ruleId": "HONDA-CIVIC-MK8-008",
+      "ruleName": "Rear Trailing Arm Bushes",
+      "description": "Rear trailing arm bushes wear causing vague handling and tyre wear. Common on older examples.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Honda",
+        "model": "Civic",
+        "generation": "Mk8",
+        "yearMin": 2005,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 7
+      },
+      "probability": {
+        "base": 0.16,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.48
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 250,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.84,
+      "sampleSize": 8000
+    },
+    {
+      "ruleId": "HONDA-CIVIC-MK8-009",
+      "ruleName": "Power Steering Pump Whine",
+      "description": "Power steering pump develops whine or moan, especially when cold or at full lock.",
+      "category": "Steering",
+      "vehicleMatch": {
+        "make": "Honda",
+        "model": "Civic",
+        "generation": "Mk8",
+        "yearMin": 2005,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "mileageMin": 80000,
+        "ageMin": 7
+      },
+      "probability": {
+        "base": 0.12,
+        "mileageMultiplier": 0.001,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.38
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 200,
+          "partsMax": 500,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.78,
+      "sampleSize": 4000
+    }
+  ]
+}

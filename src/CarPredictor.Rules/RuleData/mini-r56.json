@@ -1,0 +1,360 @@
+{
+  "rules": [
+    {
+      "ruleId": "MINI-R56-001",
+      "ruleName": "Timing Chain Failure (N14/N18)",
+      "description": "Prince engine timing chain and tensioner fail causing catastrophic engine damage. Common issue on early R56.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Mini",
+        "model": "Cooper",
+        "generation": "R56",
+        "yearMin": 2006,
+        "yearMax": 2013,
+        "engineCodes": ["N14B16", "N18B16"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "mileageMax": 150000,
+        "peakMileage": 80000
+      },
+      "probability": {
+        "base": 0.28,
+        "mileageMultiplier": 0.005,
+        "maxProbability": 0.78
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 700,
+          "partsMax": 1500,
+          "labourHoursMin": 6,
+          "labourHoursMax": 12
+        }
+      },
+      "severity": 5,
+      "isRecall": false,
+      "dataSource": "BMW TSB / Workshop Data",
+      "confidence": 0.92,
+      "sampleSize": 18000,
+      "tags": ["timing", "chain", "N14", "catastrophic"]
+    },
+    {
+      "ruleId": "MINI-R56-002",
+      "ruleName": "HPFP (High Pressure Fuel Pump)",
+      "description": "High pressure fuel pump fails causing loss of power, rough running, or no-start condition.",
+      "category": "Fuel System",
+      "vehicleMatch": {
+        "make": "Mini",
+        "model": "Cooper",
+        "generation": "R56",
+        "yearMin": 2006,
+        "yearMax": 2013,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 300,
+          "partsMax": 700,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.88,
+      "sampleSize": 12000
+    },
+    {
+      "ruleId": "MINI-R56-003",
+      "ruleName": "Thermostat/Water Pump Failure",
+      "description": "Electric thermostat and water pump unit fails causing overheating or poor cabin heat.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Mini",
+        "model": "Cooper",
+        "generation": "R56",
+        "yearMin": 2006,
+        "yearMax": 2013,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.004,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.68
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 250,
+          "partsMax": 500,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.90,
+      "sampleSize": 15000
+    },
+    {
+      "ruleId": "MINI-R56-004",
+      "ruleName": "Carbon Build-up",
+      "description": "Direct injection engine suffers from severe carbon build-up on intake valves causing rough idle and performance issues.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Mini",
+        "model": "Cooper",
+        "generation": "R56",
+        "yearMin": 2006,
+        "yearMax": 2013,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "peakMileage": 90000
+      },
+      "probability": {
+        "base": 0.35,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.78
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 50,
+          "partsMax": 150,
+          "labourHoursMin": 3,
+          "labourHoursMax": 6
+        }
+      },
+      "severity": 2,
+      "dataSource": "Technical Analysis",
+      "confidence": 0.90,
+      "sampleSize": 14000
+    },
+    {
+      "ruleId": "MINI-R56-005",
+      "ruleName": "Clutch Failure (Manual)",
+      "description": "Clutch wears prematurely, especially on Cooper S models with aggressive driving styles.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Mini",
+        "model": "Cooper",
+        "generation": "R56",
+        "yearMin": 2006,
+        "yearMax": 2013,
+        "transmissions": ["Manual"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.52
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 350,
+          "partsMax": 700,
+          "labourHoursMin": 5,
+          "labourHoursMax": 8
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.85,
+      "sampleSize": 10000
+    },
+    {
+      "ruleId": "MINI-R56-006",
+      "ruleName": "Turbo Wastegate Rattle (S)",
+      "description": "Cooper S turbocharger wastegate develops rattle at low RPM. Does not always affect performance.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Mini",
+        "model": "Cooper",
+        "generation": "R56",
+        "yearMin": 2006,
+        "yearMax": 2013,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 600,
+          "partsMax": 1400,
+          "labourHoursMin": 4,
+          "labourHoursMax": 8
+        }
+      },
+      "severity": 2,
+      "dataSource": "Owner Reports",
+      "confidence": 0.82,
+      "sampleSize": 8000
+    },
+    {
+      "ruleId": "MINI-R56-007",
+      "ruleName": "Electric Power Steering",
+      "description": "Electric power steering pump can fail causing heavy steering or complete loss of assistance.",
+      "category": "Steering",
+      "vehicleMatch": {
+        "make": "Mini",
+        "model": "Cooper",
+        "generation": "R56",
+        "yearMin": 2006,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.14,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.45
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 1000,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.84,
+      "sampleSize": 7000
+    },
+    {
+      "ruleId": "MINI-R56-008",
+      "ruleName": "Front Subframe Mounting Corrosion",
+      "description": "Front subframe mounting points corrode causing MOT failure. Common on UK salt roads.",
+      "category": "Body",
+      "vehicleMatch": {
+        "make": "Mini",
+        "model": "Cooper",
+        "generation": "R56",
+        "yearMin": 2006,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "ageMin": 8
+      },
+      "probability": {
+        "base": 0.12,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.45
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 1200,
+          "labourHoursMin": 4,
+          "labourHoursMax": 10
+        }
+      },
+      "severity": 4,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.80,
+      "sampleSize": 5000,
+      "motDefectCodes": ["6.1.B.2"]
+    },
+    {
+      "ruleId": "MINI-R56-009",
+      "ruleName": "Oil Consumption (N14)",
+      "description": "Early N14 engines consume excessive oil due to piston ring design. Check oil level frequently.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Mini",
+        "model": "Cooper",
+        "generation": "R56",
+        "yearMin": 2006,
+        "yearMax": 2010,
+        "engineCodes": ["N14B16"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000
+      },
+      "probability": {
+        "base": 0.30,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.70
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 1500,
+          "partsMax": 3500,
+          "labourHoursMin": 12,
+          "labourHoursMax": 20
+        }
+      },
+      "severity": 3,
+      "dataSource": "BMW TSB / Owner Forums",
+      "confidence": 0.85,
+      "sampleSize": 9000
+    },
+    {
+      "ruleId": "MINI-R56-010",
+      "ruleName": "Rear Shock Absorber Mounts",
+      "description": "Rear shock absorber top mounts fail causing knocking and poor handling.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Mini",
+        "model": "Cooper",
+        "generation": "R56",
+        "yearMin": 2006,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.58
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 250,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.88,
+      "sampleSize": 11000,
+      "motDefectCodes": ["2.4.A.3"]
+    }
+  ]
+}

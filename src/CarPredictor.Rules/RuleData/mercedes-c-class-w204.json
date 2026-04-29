@@ -1,0 +1,361 @@
+{
+  "rules": [
+    {
+      "ruleId": "MERC-W204-001",
+      "ruleName": "Balance Shaft Wear (M272/M273)",
+      "description": "Early M272/M273 V6 engines suffer from balance shaft sprocket wear causing timing issues and potential engine damage.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Mercedes-Benz",
+        "model": "C-Class",
+        "generation": "W204",
+        "yearMin": 2007,
+        "yearMax": 2011,
+        "engineCodes": ["M272", "M273"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "mileageMax": 150000,
+        "peakMileage": 100000
+      },
+      "probability": {
+        "base": 0.30,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.75
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 800,
+          "partsMax": 1800,
+          "labourHoursMin": 10,
+          "labourHoursMax": 18
+        }
+      },
+      "severity": 5,
+      "isRecall": false,
+      "dataSource": "Mercedes TSB / Workshop Data",
+      "confidence": 0.90,
+      "sampleSize": 12000,
+      "tags": ["balance shaft", "timing", "M272", "catastrophic"]
+    },
+    {
+      "ruleId": "MERC-W204-002",
+      "ruleName": "Camshaft Adjuster (M271 Turbo)",
+      "description": "Timing chain and camshaft adjuster solenoids fail on M271 turbocharged engines causing rattling and poor running.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Mercedes-Benz",
+        "model": "C-Class",
+        "generation": "W204",
+        "yearMin": 2007,
+        "yearMax": 2014,
+        "engineCodes": ["M271"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "mileageMax": 140000
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.70
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 600,
+          "partsMax": 1400,
+          "labourHoursMin": 6,
+          "labourHoursMax": 12
+        }
+      },
+      "severity": 4,
+      "dataSource": "Workshop Data",
+      "confidence": 0.88,
+      "sampleSize": 10000
+    },
+    {
+      "ruleId": "MERC-W204-003",
+      "ruleName": "7G-Tronic Transmission Issues",
+      "description": "7-speed automatic gearbox can develop harsh shifting, torque converter shudder, or conductor plate failure.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Mercedes-Benz",
+        "model": "C-Class",
+        "generation": "W204",
+        "yearMin": 2007,
+        "yearMax": 2014,
+        "transmissions": ["Automatic", "7G-Tronic"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 500,
+          "partsMax": 2000,
+          "labourHoursMin": 4,
+          "labourHoursMax": 10
+        }
+      },
+      "severity": 4,
+      "dataSource": "Workshop Data",
+      "confidence": 0.85,
+      "sampleSize": 9000
+    },
+    {
+      "ruleId": "MERC-W204-004",
+      "ruleName": "Injector Seal Leak (CDI)",
+      "description": "Diesel injector seals leak allowing black death (carbon build-up) around injectors requiring expensive repair.",
+      "category": "Fuel System",
+      "vehicleMatch": {
+        "make": "Mercedes-Benz",
+        "model": "C-Class",
+        "generation": "W204",
+        "yearMin": 2007,
+        "yearMax": 2014,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 80000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 200,
+          "partsMax": 600,
+          "labourHoursMin": 3,
+          "labourHoursMax": 8
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.87,
+      "sampleSize": 8000,
+      "tags": ["black death", "injector", "diesel"]
+    },
+    {
+      "ruleId": "MERC-W204-005",
+      "ruleName": "Air Suspension Compressor (Airmatic)",
+      "description": "Airmatic air suspension compressor fails causing sagging suspension or warning messages.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Mercedes-Benz",
+        "model": "C-Class",
+        "generation": "W204",
+        "yearMin": 2007,
+        "yearMax": 2014
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 500,
+          "partsMax": 1200,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.85,
+      "sampleSize": 6000
+    },
+    {
+      "ruleId": "MERC-W204-006",
+      "ruleName": "SAM (Signal Acquisition Module) Failure",
+      "description": "Front or rear SAM module fails causing multiple electrical faults, lighting issues, or no-start condition.",
+      "category": "Electrical",
+      "vehicleMatch": {
+        "make": "Mercedes-Benz",
+        "model": "C-Class",
+        "generation": "W204",
+        "yearMin": 2007,
+        "yearMax": 2014
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.15,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.45
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 1000,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82,
+      "sampleSize": 5000
+    },
+    {
+      "ruleId": "MERC-W204-007",
+      "ruleName": "Steering Rack Leak",
+      "description": "Power steering rack develops leaks causing fluid loss and heavy steering.",
+      "category": "Steering",
+      "vehicleMatch": {
+        "make": "Mercedes-Benz",
+        "model": "C-Class",
+        "generation": "W204",
+        "yearMin": 2007,
+        "yearMax": 2014
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.16,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 1200,
+          "labourHoursMin": 3,
+          "labourHoursMax": 6
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.83,
+      "sampleSize": 7000
+    },
+    {
+      "ruleId": "MERC-W204-008",
+      "ruleName": "Rear Subframe Corrosion",
+      "description": "Rear subframe corrodes around mounting points causing MOT failure. Common on older UK cars.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Mercedes-Benz",
+        "model": "C-Class",
+        "generation": "W204",
+        "yearMin": 2007,
+        "yearMax": 2012
+      },
+      "conditions": {
+        "ageMin": 8
+      },
+      "probability": {
+        "base": 0.12,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.45
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 600,
+          "partsMax": 1500,
+          "labourHoursMin": 6,
+          "labourHoursMax": 12
+        }
+      },
+      "severity": 4,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.80,
+      "sampleSize": 4000,
+      "motDefectCodes": ["6.1.B.2"]
+    },
+    {
+      "ruleId": "MERC-W204-009",
+      "ruleName": "DPF Regeneration Issues",
+      "description": "Diesel particulate filter struggles to regenerate on short journeys causing blockage and warning lights.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Mercedes-Benz",
+        "model": "C-Class",
+        "generation": "W204",
+        "yearMin": 2007,
+        "yearMax": 2014,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 50000
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.002,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 500,
+          "partsMax": 2000,
+          "labourHoursMin": 2,
+          "labourHoursMax": 5
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.86,
+      "sampleSize": 9000
+    },
+    {
+      "ruleId": "MERC-W204-010",
+      "ruleName": "Glow Plug Control Module",
+      "description": "Glow plug control module fails causing hard starting in cold weather and check engine light.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Mercedes-Benz",
+        "model": "C-Class",
+        "generation": "W204",
+        "yearMin": 2007,
+        "yearMax": 2014,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 150,
+          "partsMax": 400,
+          "labourHoursMin": 1,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.84,
+      "sampleSize": 7000
+    }
+  ]
+}

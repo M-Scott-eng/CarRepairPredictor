@@ -5,42 +5,65 @@ A web application that predicts repair costs for used vehicles in the UK market,
 ## Prerequisites
 
 - .NET 8.0 SDK
-- SQL Server 2019+ or SQL Server LocalDB
+- PostgreSQL 14+ (or [Supabase](https://supabase.com) - recommended)
+- Node.js 18+ (for frontend)
 - Visual Studio 2022 or VS Code with C# extension
 
 ## Getting Started
 
-### Database Setup
+### Quick Start with Supabase (Recommended)
 
-1. Create a new SQL Server database named `CarRepairPredictor`
-2. Run the SQL scripts in order from `src/CarPredictor.Data/Scripts/`:
-   - `001_CreateTables.sql` - Creates all database tables and indexes
-   - `002_CreateStoredProcedures.sql` - Creates stored procedures
-   - `003_SeedReferenceData.sql` - Populates reference data (manufacturers, models, categories)
+See [docs/SETUP_SUPABASE.md](docs/SETUP_SUPABASE.md) for detailed instructions.
+
+1. Create a free account at [supabase.com](https://supabase.com)
+2. Create a new project
+3. Run the SQL scripts from `src/CarPredictor.Data/Scripts/PostgreSQL/` in the SQL Editor
+4. Copy your connection string to `appsettings.Development.json`
+
+### Local PostgreSQL Setup
+
+1. Install PostgreSQL or run via Docker:
+   ```bash
+   docker run --name carpredictor-db -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=carrepairpredictor_dev -p 5432:5432 -d postgres:16
+   ```
+
+2. Run the schema scripts:
+   ```bash
+   psql -U postgres -d carrepairpredictor_dev -f src/CarPredictor.Data/Scripts/PostgreSQL/001_CreateSchema.sql
+   psql -U postgres -d carrepairpredictor_dev -f src/CarPredictor.Data/Scripts/PostgreSQL/002_SeedData.sql
+   ```
 
 ### Configuration
 
-Update the connection string in `src/CarPredictor.Api/appsettings.json`:
+Update the connection string in `src/CarPredictor.Api/appsettings.Development.json`:
 
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=YOUR_SERVER;Database=CarRepairPredictor;Trusted_Connection=True;TrustServerCertificate=True;"
+    "DefaultConnection": "Host=localhost;Port=5432;Database=carrepairpredictor_dev;Username=postgres;Password=postgres"
   }
 }
 ```
 
 ### Running the Application
 
+**Backend:**
 ```bash
 cd src/CarPredictor.Api
 dotnet run
 ```
 
-The API will be available at:
-- HTTP: `http://localhost:5000`
-- HTTPS: `https://localhost:5001`
-- Swagger UI: `https://localhost:5001/swagger`
+**Frontend:**
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The application will be available at:
+- Frontend: `http://localhost:3000`
+- API: `http://localhost:5235`
+- Swagger UI: `http://localhost:5235/swagger`
 
 ## Project Structure
 
@@ -86,14 +109,15 @@ src/
 ## Technology Stack
 
 - **Backend**: .NET 8, ASP.NET Core Web API
-- **Data Access**: Dapper + SQL Server Stored Procedures
-- **Database**: SQL Server 2019+
+- **Frontend**: React 18, TypeScript, Vite, TailwindCSS
+- **Data Access**: Dapper with PostgreSQL
+- **Database**: PostgreSQL 14+ (Supabase recommended)
+- **Payments**: Stripe
 - **Documentation**: Swagger/OpenAPI
 
 ## Coding Standards
 
 This project follows the Esteiro coding standards including:
-- Stored procedures for all database access (prefixed with `sp`)
 - Interface-based dependency injection
 - Repository pattern with Dapper
 - DTOs for API contracts (never expose domain entities)

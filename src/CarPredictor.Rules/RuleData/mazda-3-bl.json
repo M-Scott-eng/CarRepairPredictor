@@ -1,0 +1,359 @@
+{
+  "rules": [
+    {
+      "ruleId": "MAZDA-3-BL-001",
+      "ruleName": "Rust on Rear Wheel Arches",
+      "description": "Rear wheel arches prone to rust bubbling from inside out. Common UK issue on salted roads.",
+      "category": "Body",
+      "vehicleMatch": {
+        "make": "Mazda",
+        "model": "3",
+        "generation": "BL",
+        "yearMin": 2009,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.22,
+        "ageMultiplier": 0.035,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 200,
+          "partsMax": 600,
+          "labourHoursMin": 4,
+          "labourHoursMax": 10
+        }
+      },
+      "severity": 3,
+      "isRecall": false,
+      "dataSource": "MOT Data / Owner Reports",
+      "confidence": 0.88,
+      "sampleSize": 12000,
+      "tags": ["rust", "corrosion", "body"]
+    },
+    {
+      "ruleId": "MAZDA-3-BL-002",
+      "ruleName": "Clutch Master Cylinder Leak",
+      "description": "Clutch master cylinder develops internal leak causing spongy clutch pedal.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Mazda",
+        "model": "3",
+        "generation": "BL",
+        "yearMin": 2009,
+        "yearMax": 2013,
+        "transmissions": ["Manual"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.16,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.48
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 250,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82,
+      "sampleSize": 7000
+    },
+    {
+      "ruleId": "MAZDA-3-BL-003",
+      "ruleName": "EGR Valve Failure (Diesel)",
+      "description": "EGR valve clogs with carbon causing loss of power and engine management light.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Mazda",
+        "model": "3",
+        "generation": "BL",
+        "yearMin": 2009,
+        "yearMax": 2013,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.24,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 200,
+          "partsMax": 500,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT/Workshop Data",
+      "confidence": 0.86,
+      "sampleSize": 10000
+    },
+    {
+      "ruleId": "MAZDA-3-BL-004",
+      "ruleName": "DPF Regeneration Issues",
+      "description": "Diesel particulate filter blocks on short journeys causing limp mode and warning lights.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Mazda",
+        "model": "3",
+        "generation": "BL",
+        "yearMin": 2009,
+        "yearMax": 2013,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 50000
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.002,
+        "maxProbability": 0.52
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 1300,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.85,
+      "sampleSize": 8000
+    },
+    {
+      "ruleId": "MAZDA-3-BL-005",
+      "ruleName": "Timing Chain Rattle (2.2D)",
+      "description": "2.2 diesel timing chain develops rattle on cold start. Can stretch over time.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Mazda",
+        "model": "3",
+        "generation": "BL",
+        "yearMin": 2009,
+        "yearMax": 2013,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 80000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.15,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.48
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 900,
+          "labourHoursMin": 5,
+          "labourHoursMax": 9
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.80,
+      "sampleSize": 5500
+    },
+    {
+      "ruleId": "MAZDA-3-BL-006",
+      "ruleName": "Front Suspension Lower Arms",
+      "description": "Front lower suspension arm bushes and ball joints wear causing knocking.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Mazda",
+        "model": "3",
+        "generation": "BL",
+        "yearMin": 2009,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.022,
+        "maxProbability": 0.62
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 250,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.90,
+      "sampleSize": 15000,
+      "motDefectCodes": ["2.4.G.2"]
+    },
+    {
+      "ruleId": "MAZDA-3-BL-007",
+      "ruleName": "Anti-Roll Bar Drop Links",
+      "description": "Anti-roll bar drop links wear causing rattling over bumps. Common MOT failure.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Mazda",
+        "model": "3",
+        "generation": "BL",
+        "yearMin": 2009,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.28,
+        "mileageMultiplier": 0.004,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.68
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 40,
+          "partsMax": 100,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1.5
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.92,
+      "sampleSize": 18000,
+      "motDefectCodes": ["2.4.G.1"]
+    },
+    {
+      "ruleId": "MAZDA-3-BL-008",
+      "ruleName": "Rear Shock Absorber Failure",
+      "description": "Rear shock absorbers leak and fail causing poor handling and MOT failure.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Mazda",
+        "model": "3",
+        "generation": "BL",
+        "yearMin": 2009,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 120,
+          "partsMax": 300,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.88,
+      "sampleSize": 12000,
+      "motDefectCodes": ["2.7.3"]
+    },
+    {
+      "ruleId": "MAZDA-3-BL-009",
+      "ruleName": "Water Pump Leak",
+      "description": "Water pump develops leak causing coolant loss. Should be checked at service.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Mazda",
+        "model": "3",
+        "generation": "BL",
+        "yearMin": 2009,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.15,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.42
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 120,
+          "partsMax": 280,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82,
+      "sampleSize": 6500
+    },
+    {
+      "ruleId": "MAZDA-3-BL-010",
+      "ruleName": "Drive Belt and Tensioner",
+      "description": "Auxiliary drive belt and tensioner wear. Should be replaced preventatively.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Mazda",
+        "model": "3",
+        "generation": "BL",
+        "yearMin": 2009,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 60,
+          "partsMax": 150,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1.5
+        }
+      },
+      "severity": 2,
+      "dataSource": "Service Schedule",
+      "confidence": 0.85,
+      "sampleSize": 10000
+    }
+  ]
+}

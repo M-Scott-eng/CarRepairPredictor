@@ -1,0 +1,21 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=YOUR_HOST;Port=6543;Database=postgres;Username=YOUR_USER;Password=YOUR_PASSWORD;SSL Mode=Require;Trust Server Certificate=true;Timeout=5;Command Timeout=5"
+  },
+  "MotApi": {
+    "DvlaApiKey": "YOUR_DVLA_API_KEY",
+    "MotHistoryApiKey": "YOUR_MOT_API_KEY",
+    "MotHistoryBaseUrl": "https://tapi.dvsa.gov.uk",
+    "DvlaBaseUrl": "https://driver-vehicle-licensing.api.gov.uk/vehicle-enquiry/v1/vehicles",
+    "ClientId": "YOUR_CLIENT_ID",
+    "ClientSecret": "YOUR_CLIENT_SECRET",
+    "TokenUrl": "https://login.microsoftonline.com/YOUR_TENANT_ID/oauth2/v2.0/token",
+    "Scope": "https://tapi.dvsa.gov.uk/.default"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}

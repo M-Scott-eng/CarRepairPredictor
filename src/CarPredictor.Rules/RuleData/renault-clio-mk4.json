@@ -1,0 +1,360 @@
+{
+  "rules": [
+    {
+      "ruleId": "RENAULT-CLIO-MK4-001",
+      "ruleName": "0.9 TCe Turbo Failure",
+      "description": "0.9 TCe 3-cylinder turbocharger can fail due to oil starvation or worn bearings.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Renault",
+        "model": "Clio",
+        "generation": "Mk4",
+        "yearMin": 2012,
+        "yearMax": 2019,
+        "engineCodes": ["H4B"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 500,
+          "partsMax": 1200,
+          "labourHoursMin": 3,
+          "labourHoursMax": 6
+        }
+      },
+      "severity": 4,
+      "isRecall": false,
+      "dataSource": "Workshop Data",
+      "confidence": 0.84,
+      "sampleSize": 8000,
+      "tags": ["turbo", "tce", "oil starvation"]
+    },
+    {
+      "ruleId": "RENAULT-CLIO-MK4-002",
+      "ruleName": "Dual Clutch (EDC) Transmission",
+      "description": "EDC dual-clutch gearbox can develop shuddering, jerky shifts, or complete failure.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Renault",
+        "model": "Clio",
+        "generation": "Mk4",
+        "yearMin": 2012,
+        "yearMax": 2019,
+        "transmissions": ["EDC", "Automatic"]
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "mileageMax": 130000,
+        "peakMileage": 80000
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.62
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 800,
+          "partsMax": 2000,
+          "labourHoursMin": 5,
+          "labourHoursMax": 10
+        }
+      },
+      "severity": 4,
+      "dataSource": "Workshop Data / Owner Forums",
+      "confidence": 0.86,
+      "sampleSize": 10000,
+      "tags": ["edc", "dual clutch", "shudder"]
+    },
+    {
+      "ruleId": "RENAULT-CLIO-MK4-003",
+      "ruleName": "DPF Regeneration Issues (dCi)",
+      "description": "Diesel particulate filter blocks on short journeys causing limp mode and warning lights.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Renault",
+        "model": "Clio",
+        "generation": "Mk4",
+        "yearMin": 2012,
+        "yearMax": 2019,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 40000
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.58
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 350,
+          "partsMax": 1200,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.88,
+      "sampleSize": 11000
+    },
+    {
+      "ruleId": "RENAULT-CLIO-MK4-004",
+      "ruleName": "Fuel Injector Issues (dCi)",
+      "description": "Diesel fuel injectors can leak or fail causing rough running and black smoke.",
+      "category": "Fuel System",
+      "vehicleMatch": {
+        "make": "Renault",
+        "model": "Clio",
+        "generation": "Mk4",
+        "yearMin": 2012,
+        "yearMax": 2019,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.52
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 180,
+          "partsMax": 450,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.84,
+      "sampleSize": 7000
+    },
+    {
+      "ruleId": "RENAULT-CLIO-MK4-005",
+      "ruleName": "Electric Power Steering Faults",
+      "description": "Electric power steering develops faults causing heavy steering or warning lights.",
+      "category": "Steering",
+      "vehicleMatch": {
+        "make": "Renault",
+        "model": "Clio",
+        "generation": "Mk4",
+        "yearMin": 2012,
+        "yearMax": 2019
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.14,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.42
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 350,
+          "partsMax": 850,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82,
+      "sampleSize": 6000
+    },
+    {
+      "ruleId": "RENAULT-CLIO-MK4-006",
+      "ruleName": "Timing Belt Replacement",
+      "description": "Timing belt requires replacement at service intervals. Failure causes catastrophic engine damage.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Renault",
+        "model": "Clio",
+        "generation": "Mk4",
+        "yearMin": 2012,
+        "yearMax": 2019,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.15,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 250,
+          "partsMax": 500,
+          "labourHoursMin": 4,
+          "labourHoursMax": 7
+        }
+      },
+      "severity": 5,
+      "dataSource": "Service Schedule",
+      "confidence": 0.92,
+      "sampleSize": 15000
+    },
+    {
+      "ruleId": "RENAULT-CLIO-MK4-007",
+      "ruleName": "Ignition Coils (TCe)",
+      "description": "Ignition coils fail on turbocharged petrol engines causing misfires and rough running.",
+      "category": "Ignition",
+      "vehicleMatch": {
+        "make": "Renault",
+        "model": "Clio",
+        "generation": "Mk4",
+        "yearMin": 2012,
+        "yearMax": 2019,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 40,
+          "partsMax": 120,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.86,
+      "sampleSize": 12000
+    },
+    {
+      "ruleId": "RENAULT-CLIO-MK4-008",
+      "ruleName": "Front Suspension Ball Joints",
+      "description": "Front lower ball joints wear causing knocking and MOT failure.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Renault",
+        "model": "Clio",
+        "generation": "Mk4",
+        "yearMin": 2012,
+        "yearMax": 2019
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.022,
+        "maxProbability": 0.62
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 200,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.90,
+      "sampleSize": 16000,
+      "motDefectCodes": ["2.4.G.2"]
+    },
+    {
+      "ruleId": "RENAULT-CLIO-MK4-009",
+      "ruleName": "Keycard/Hands-Free System",
+      "description": "Keycard or hands-free entry system develops faults preventing starting or locking.",
+      "category": "Electrical",
+      "vehicleMatch": {
+        "make": "Renault",
+        "model": "Clio",
+        "generation": "Mk4",
+        "yearMin": 2012,
+        "yearMax": 2019
+      },
+      "conditions": {
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.15,
+        "ageMultiplier": 0.022,
+        "maxProbability": 0.45
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 150,
+          "partsMax": 400,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "Owner Reports",
+      "confidence": 0.78,
+      "sampleSize": 5500
+    },
+    {
+      "ruleId": "RENAULT-CLIO-MK4-010",
+      "ruleName": "Rear Brake Drums Corrosion",
+      "description": "Rear brake drums corrode and seize on UK roads. Can cause MOT failure.",
+      "category": "Brakes",
+      "vehicleMatch": {
+        "make": "Renault",
+        "model": "Clio",
+        "generation": "Mk4",
+        "yearMin": 2012,
+        "yearMax": 2019
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 250,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.86,
+      "sampleSize": 14000
+    }
+  ]
+}

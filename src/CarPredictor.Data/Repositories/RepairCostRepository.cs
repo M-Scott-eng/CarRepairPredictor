@@ -1,12 +1,11 @@
 using Dapper;
 using CarPredictor.Core.Domain;
 using CarPredictor.Core.Interfaces;
-using System.Data;
 
 namespace CarPredictor.Data.Repositories;
 
 /// <summary>
-/// Repository implementation for repair cost data access using stored procedures.
+/// Repository implementation for repair cost data access.
 /// </summary>
 public sealed class RepairCostRepository : IRepairCostRepository
 {
@@ -24,24 +23,31 @@ public sealed class RepairCostRepository : IRepairCostRepository
     {
         using var connection = _connectionFactory.CreateConnection();
 
-        // Create DataTable for TVP
-        var idsTable = new DataTable();
-        idsTable.Columns.Add("Id", typeof(int));
-        
-        foreach (var id in failurePatternIds)
+        var idsList = failurePatternIds.ToList();
+        if (idsList.Count == 0)
         {
-            idsTable.Rows.Add(id);
+            return Array.Empty<RepairCost>();
         }
 
-        var result = await connection.QueryAsync<RepairCost>(
-            "sp_GetRepairCostsByFailurePatterns",
-            new
-            {
-                FailurePatternIds = idsTable.AsTableValuedParameter("dbo.IntIdList"),
-                RegionId = regionId
-            },
-            commandType: CommandType.StoredProcedure);
+        const string sql = """
+            SELECT rc.repair_cost_id AS RepairCostId,
+                   rc.failure_pattern_id AS FailurePatternId,
+                   rc.region_id AS RegionId,
+                   rc.min_cost AS MinCost,
+                   rc.max_cost AS MaxCost,
+                   rc.average_cost AS AverageCost,
+                   rc.labour_hours AS LabourHours,
+                   rc.parts_only_cost AS PartsOnlyCost,
+                   rc.effective_from AS EffectiveFrom,
+                   rc.effective_to AS EffectiveTo
+            FROM repair_cost rc
+            WHERE rc.failure_pattern_id = ANY(@FailurePatternIds)
+              AND rc.region_id = @RegionId
+              AND rc.effective_from <= CURRENT_DATE
+              AND (rc.effective_to IS NULL OR rc.effective_to >= CURRENT_DATE)
+            """;
 
+        var result = await connection.QueryAsync<RepairCost>(sql, new { FailurePatternIds = idsList.ToArray(), RegionId = regionId });
         return result.ToList();
     }
 }

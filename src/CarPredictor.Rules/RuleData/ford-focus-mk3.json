@@ -1,0 +1,359 @@
+{
+  "rules": [
+    {
+      "ruleId": "FORD-FOCUS-MK3-001",
+      "ruleName": "PowerShift Transmission Failure",
+      "description": "Dual-clutch PowerShift (DPS6/6DCT250) gearbox suffers from shuddering, slipping, and total failure. Subject to class action lawsuits.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Focus",
+        "generation": "Mk3",
+        "yearMin": 2011,
+        "yearMax": 2018,
+        "transmissions": ["Automatic", "PowerShift", "DPS6"]
+      },
+      "conditions": {
+        "mileageMin": 25000
+      },
+      "probability": {
+        "base": 0.45,
+        "mileageMultiplier": 0.005,
+        "maxProbability": 0.85
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 1000,
+          "partsMax": 2500,
+          "labourHoursMin": 6,
+          "labourHoursMax": 12
+        }
+      },
+      "severity": 5,
+      "isRecall": false,
+      "dataSource": "Class Action Data / DVSA",
+      "confidence": 0.95,
+      "sampleSize": 45000,
+      "tags": ["powershift", "dps6", "clutch", "transmission", "shudder"]
+    },
+    {
+      "ruleId": "FORD-FOCUS-MK3-002",
+      "ruleName": "1.0 EcoBoost Coolant Leak",
+      "description": "Coolant degas hose can split causing rapid coolant loss and overheating. Safety recall issued.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Focus",
+        "generation": "Mk3",
+        "yearMin": 2012,
+        "yearMax": 2018,
+        "engineCodes": ["M1DA", "M2DA", "SFDA", "YYJC"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 30000,
+        "ageMin": 3
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 50,
+          "partsMax": 150,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 3,
+      "isRecall": true,
+      "dataSource": "Ford Safety Recall 17S10",
+      "confidence": 0.93,
+      "sampleSize": 15000,
+      "tags": ["ecoboost", "coolant", "overheating", "recall"]
+    },
+    {
+      "ruleId": "FORD-FOCUS-MK3-003",
+      "ruleName": "Door Latch Failure",
+      "description": "Door latches can fail to close properly or open while driving. Multiple safety recalls issued.",
+      "category": "Body",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Focus",
+        "generation": "Mk3",
+        "yearMin": 2011,
+        "yearMax": 2018
+      },
+      "conditions": {
+        "ageMin": 3
+      },
+      "probability": {
+        "base": 0.18,
+        "ageMultiplier": 0.03,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 200,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 4,
+      "isRecall": true,
+      "dataSource": "Ford Safety Recall",
+      "confidence": 0.90,
+      "sampleSize": 20000
+    },
+    {
+      "ruleId": "FORD-FOCUS-MK3-004",
+      "ruleName": "Fuel Tank Deformation",
+      "description": "Fuel tank can deform or crack causing fuel leaks. Recall issued.",
+      "category": "Fuel System",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Focus",
+        "generation": "Mk3",
+        "yearMin": 2012,
+        "yearMax": 2016
+      },
+      "conditions": {
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.10,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.35
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 250,
+          "partsMax": 600,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 4,
+      "isRecall": true,
+      "dataSource": "Ford Safety Recall",
+      "confidence": 0.85,
+      "sampleSize": 8000
+    },
+    {
+      "ruleId": "FORD-FOCUS-MK3-005",
+      "ruleName": "Clutch Slave Cylinder (Manual)",
+      "description": "Clutch slave cylinder leaks on manual gearbox causing clutch failure or difficult gear selection.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Focus",
+        "generation": "Mk3",
+        "yearMin": 2011,
+        "yearMax": 2018,
+        "transmissions": ["Manual"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 250,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.85,
+      "sampleSize": 12000
+    },
+    {
+      "ruleId": "FORD-FOCUS-MK3-006",
+      "ruleName": "EGR Valve Failure (Diesel)",
+      "description": "EGR valve clogs with carbon causing loss of power, rough idle, and emissions failures.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Focus",
+        "generation": "Mk3",
+        "yearMin": 2011,
+        "yearMax": 2018,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 200,
+          "partsMax": 500,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT/Workshop Data",
+      "confidence": 0.88,
+      "sampleSize": 14000
+    },
+    {
+      "ruleId": "FORD-FOCUS-MK3-007",
+      "ruleName": "DPF Blockage (Diesel)",
+      "description": "Diesel particulate filter blocks, especially on short journeys, causing warning lights and limp mode.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Focus",
+        "generation": "Mk3",
+        "yearMin": 2011,
+        "yearMax": 2018,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 40000
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.002,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 1500,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.87,
+      "sampleSize": 11000
+    },
+    {
+      "ruleId": "FORD-FOCUS-MK3-008",
+      "ruleName": "Front Suspension Springs",
+      "description": "Front coil springs prone to snapping. Common MOT failure on potholed UK roads.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Focus",
+        "generation": "Mk3",
+        "yearMin": 2011,
+        "yearMax": 2018
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 180,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.92,
+      "sampleSize": 22000,
+      "motDefectCodes": ["2.4.A.2a"]
+    },
+    {
+      "ruleId": "FORD-FOCUS-MK3-009",
+      "ruleName": "Electric Power Steering Failure",
+      "description": "EPAS electric power steering can fail causing heavy steering or complete loss of assistance.",
+      "category": "Steering",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Focus",
+        "generation": "Mk3",
+        "yearMin": 2011,
+        "yearMax": 2018
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.12,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.40
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 900,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 4,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82,
+      "sampleSize": 7000
+    },
+    {
+      "ruleId": "FORD-FOCUS-MK3-010",
+      "ruleName": "Rear Brake Disc Corrosion",
+      "description": "Rear brake discs corrode and pit causing juddering and uneven wear. Common on UK cars.",
+      "category": "Brakes",
+      "vehicleMatch": {
+        "make": "Ford",
+        "model": "Focus",
+        "generation": "Mk3",
+        "yearMin": 2011,
+        "yearMax": 2018
+      },
+      "conditions": {
+        "mileageMin": 30000,
+        "ageMin": 3
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.03,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 250,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data",
+      "confidence": 0.88,
+      "sampleSize": 18000
+    }
+  ]
+}

@@ -1,12 +1,11 @@
 using Dapper;
 using CarPredictor.Core.Domain;
 using CarPredictor.Core.Interfaces;
-using System.Data;
 
 namespace CarPredictor.Data.Repositories;
 
 /// <summary>
-/// Repository implementation for manufacturer data access using stored procedures.
+/// Repository implementation for manufacturer data access.
 /// </summary>
 public sealed class ManufacturerRepository : IManufacturerRepository
 {
@@ -21,10 +20,15 @@ public sealed class ManufacturerRepository : IManufacturerRepository
     {
         using var connection = _connectionFactory.CreateConnection();
 
-        var result = await connection.QueryAsync<Manufacturer>(
-            "sp_GetAllManufacturers",
-            commandType: CommandType.StoredProcedure);
+        const string sql = """
+            SELECT manufacturer_id AS ManufacturerId,
+                   manufacturer_name AS ManufacturerName,
+                   country_of_origin AS CountryOfOrigin
+            FROM manufacturer
+            ORDER BY manufacturer_name
+            """;
 
+        var result = await connection.QueryAsync<Manufacturer>(sql);
         return result.ToList();
     }
 
@@ -32,11 +36,14 @@ public sealed class ManufacturerRepository : IManufacturerRepository
     {
         using var connection = _connectionFactory.CreateConnection();
 
-        var result = await connection.QuerySingleOrDefaultAsync<Manufacturer>(
-            "sp_GetManufacturerById",
-            new { ManufacturerId = manufacturerId },
-            commandType: CommandType.StoredProcedure);
+        const string sql = """
+            SELECT manufacturer_id AS ManufacturerId,
+                   manufacturer_name AS ManufacturerName,
+                   country_of_origin AS CountryOfOrigin
+            FROM manufacturer
+            WHERE manufacturer_id = @ManufacturerId
+            """;
 
-        return result;
+        return await connection.QuerySingleOrDefaultAsync<Manufacturer>(sql, new { ManufacturerId = manufacturerId });
     }
 }

@@ -1,0 +1,288 @@
+{
+  "rules": [
+    {
+      "ruleId": "TOYOTA-YARIS-MK2-001",
+      "ruleName": "Water Pump Leak",
+      "description": "Water pump develops leaks, especially on 1.0 and 1.3 engines. Can cause overheating if not addressed.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Toyota",
+        "model": "Yaris",
+        "generation": "Mk2",
+        "yearMin": 2005,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "mileageMin": 80000,
+        "ageMin": 7
+      },
+      "probability": {
+        "base": 0.12,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.40
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 250,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "isRecall": false,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82,
+      "sampleSize": 8000,
+      "tags": ["reliable", "toyota", "water pump"]
+    },
+    {
+      "ruleId": "TOYOTA-YARIS-MK2-002",
+      "ruleName": "Clutch Master Cylinder Leak",
+      "description": "Clutch master cylinder seal leaks causing spongy clutch pedal and difficult gear selection.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Toyota",
+        "model": "Yaris",
+        "generation": "Mk2",
+        "yearMin": 2005,
+        "yearMax": 2011,
+        "transmissions": ["Manual"]
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.14,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.42
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 180,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.80,
+      "sampleSize": 6000
+    },
+    {
+      "ruleId": "TOYOTA-YARIS-MK2-003",
+      "ruleName": "Catalytic Converter Theft",
+      "description": "Hybrid Yaris particularly targeted for catalytic converter theft due to high precious metal content.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Toyota",
+        "model": "Yaris",
+        "generation": "Mk2",
+        "yearMin": 2005,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.08,
+        "ageMultiplier": 0.01,
+        "maxProbability": 0.25
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 600,
+          "partsMax": 1500,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 3,
+      "dataSource": "Police/Insurance Data",
+      "confidence": 0.75,
+      "sampleSize": 3000
+    },
+    {
+      "ruleId": "TOYOTA-YARIS-MK2-004",
+      "ruleName": "Rear Drum Brake Adjustment",
+      "description": "Rear drum brakes require periodic adjustment to maintain proper function. Often missed in servicing.",
+      "category": "Brakes",
+      "vehicleMatch": {
+        "make": "Toyota",
+        "model": "Yaris",
+        "generation": "Mk2",
+        "yearMin": 2005,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 30,
+          "partsMax": 100,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1
+        }
+      },
+      "severity": 1,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.85,
+      "sampleSize": 12000
+    },
+    {
+      "ruleId": "TOYOTA-YARIS-MK2-005",
+      "ruleName": "Exhaust Manifold Crack",
+      "description": "Exhaust manifold can crack causing ticking noise and MOT emissions failure.",
+      "category": "Exhaust",
+      "vehicleMatch": {
+        "make": "Toyota",
+        "model": "Yaris",
+        "generation": "Mk2",
+        "yearMin": 2005,
+        "yearMax": 2011,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 80000,
+        "ageMin": 8
+      },
+      "probability": {
+        "base": 0.10,
+        "mileageMultiplier": 0.001,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.38
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 150,
+          "partsMax": 400,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.78,
+      "sampleSize": 5000
+    },
+    {
+      "ruleId": "TOYOTA-YARIS-MK2-006",
+      "ruleName": "Front Suspension Strut Mounts",
+      "description": "Front strut top mounts wear causing knocking over bumps and poor handling.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Toyota",
+        "model": "Yaris",
+        "generation": "Mk2",
+        "yearMin": 2005,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.48
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 60,
+          "partsMax": 150,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.85,
+      "sampleSize": 10000,
+      "motDefectCodes": ["2.4.A.3"]
+    },
+    {
+      "ruleId": "TOYOTA-YARIS-MK2-007",
+      "ruleName": "Oxygen Sensor Failure",
+      "description": "Oxygen sensors degrade causing poor fuel economy and emissions. Common over 100k miles.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Toyota",
+        "model": "Yaris",
+        "generation": "Mk2",
+        "yearMin": 2005,
+        "yearMax": 2011,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 90000,
+        "ageMin": 8
+      },
+      "probability": {
+        "base": 0.15,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.012,
+        "maxProbability": 0.42
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 200,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1.5
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.82,
+      "sampleSize": 7000
+    },
+    {
+      "ruleId": "TOYOTA-YARIS-MK2-008",
+      "ruleName": "Drive Belt Wear",
+      "description": "Auxiliary drive belt and tensioner wear, should be inspected and replaced preventatively.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Toyota",
+        "model": "Yaris",
+        "generation": "Mk2",
+        "yearMin": 2005,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 50,
+          "partsMax": 150,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1.5
+        }
+      },
+      "severity": 2,
+      "dataSource": "Service Schedule",
+      "confidence": 0.88,
+      "sampleSize": 15000
+    }
+  ]
+}

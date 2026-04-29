@@ -1,0 +1,363 @@
+{
+  "rules": [
+    {
+      "ruleId": "AUDI-A3-8P-001",
+      "ruleName": "DSG Mechatronic Unit Failure",
+      "description": "S-Tronic/DSG dual-clutch gearbox mechatronic unit can fail causing jerky shifts or complete loss of drive.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A3",
+        "generation": "8P",
+        "yearMin": 2003,
+        "yearMax": 2012,
+        "transmissions": ["DSG", "S-Tronic", "Automatic"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "mileageMax": 150000,
+        "peakMileage": 90000
+      },
+      "probability": {
+        "base": 0.24,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.68
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 900,
+          "partsMax": 2000,
+          "labourHoursMin": 4,
+          "labourHoursMax": 8
+        }
+      },
+      "severity": 4,
+      "isRecall": false,
+      "dataSource": "Workshop Data / Owner Reports",
+      "confidence": 0.90,
+      "sampleSize": 15000,
+      "tags": ["dsg", "mechatronic", "s-tronic", "transmission"]
+    },
+    {
+      "ruleId": "AUDI-A3-8P-002",
+      "ruleName": "Timing Chain Tensioner (2.0 TFSI)",
+      "description": "Early EA888 2.0 TFSI engines suffer from timing chain tensioner failure causing catastrophic engine damage.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A3",
+        "generation": "8P",
+        "yearMin": 2008,
+        "yearMax": 2012,
+        "engineCodes": ["CCTA", "CCZA", "CAWB"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "mileageMax": 120000,
+        "peakMileage": 70000
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.005,
+        "maxProbability": 0.75
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 700,
+          "partsMax": 1400,
+          "labourHoursMin": 6,
+          "labourHoursMax": 12
+        }
+      },
+      "severity": 5,
+      "dataSource": "TSB / Workshop Data",
+      "confidence": 0.92,
+      "sampleSize": 12000,
+      "tags": ["timing", "chain", "tensioner", "catastrophic"]
+    },
+    {
+      "ruleId": "AUDI-A3-8P-003",
+      "ruleName": "PCV Valve Diaphragm Failure",
+      "description": "Positive crankcase ventilation diaphragm fails causing high oil consumption and rough idle.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A3",
+        "generation": "8P",
+        "yearMin": 2003,
+        "yearMax": 2012,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.28,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 200,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.88,
+      "sampleSize": 14000
+    },
+    {
+      "ruleId": "AUDI-A3-8P-004",
+      "ruleName": "High Pressure Fuel Pump (FSI/TFSI)",
+      "description": "High pressure fuel pump cam follower wears causing fuel delivery issues and potential cam damage.",
+      "category": "Fuel System",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A3",
+        "generation": "8P",
+        "yearMin": 2005,
+        "yearMax": 2012,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 40000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 200,
+          "partsMax": 500,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.86,
+      "sampleSize": 10000
+    },
+    {
+      "ruleId": "AUDI-A3-8P-005",
+      "ruleName": "Carbon Build-up (Direct Injection)",
+      "description": "FSI/TFSI direct injection engines suffer from carbon deposits on intake valves causing rough running.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A3",
+        "generation": "8P",
+        "yearMin": 2005,
+        "yearMax": 2012,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "peakMileage": 90000
+      },
+      "probability": {
+        "base": 0.35,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.78
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 50,
+          "partsMax": 150,
+          "labourHoursMin": 3,
+          "labourHoursMax": 5
+        }
+      },
+      "severity": 2,
+      "dataSource": "Technical Analysis",
+      "confidence": 0.88,
+      "sampleSize": 11000
+    },
+    {
+      "ruleId": "AUDI-A3-8P-006",
+      "ruleName": "Water Pump Failure (1.8/2.0 TFSI)",
+      "description": "Plastic water pump impeller degrades causing coolant leak or overheating.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A3",
+        "generation": "8P",
+        "yearMin": 2003,
+        "yearMax": 2012,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 150,
+          "partsMax": 350,
+          "labourHoursMin": 3,
+          "labourHoursMax": 5
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.85,
+      "sampleSize": 9000
+    },
+    {
+      "ruleId": "AUDI-A3-8P-007",
+      "ruleName": "EGR Valve Failure (TDI)",
+      "description": "EGR valve clogs with carbon causing loss of power, rough idle, and emissions failures.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A3",
+        "generation": "8P",
+        "yearMin": 2003,
+        "yearMax": 2012,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.26,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.62
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 200,
+          "partsMax": 500,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT/Workshop Data",
+      "confidence": 0.88,
+      "sampleSize": 13000
+    },
+    {
+      "ruleId": "AUDI-A3-8P-008",
+      "ruleName": "DPF Regeneration Issues",
+      "description": "Diesel particulate filter blocks on short journeys causing limp mode and warning lights.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A3",
+        "generation": "8P",
+        "yearMin": 2006,
+        "yearMax": 2012,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 50000
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.002,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 1500,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.86,
+      "sampleSize": 10000
+    },
+    {
+      "ruleId": "AUDI-A3-8P-009",
+      "ruleName": "Front Lower Wishbone Bushes",
+      "description": "Front suspension wishbone bushes wear causing knocking and MOT failure for excessive play.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A3",
+        "generation": "8P",
+        "yearMin": 2003,
+        "yearMax": 2012
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.30,
+        "mileageMultiplier": 0.004,
+        "ageMultiplier": 0.025,
+        "maxProbability": 0.72
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 280,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.92,
+      "sampleSize": 22000,
+      "motDefectCodes": ["2.4.G.2"]
+    },
+    {
+      "ruleId": "AUDI-A3-8P-010",
+      "ruleName": "Ignition Coil Pack Failure",
+      "description": "Ignition coils fail causing misfires, rough running, and check engine light. Common on all petrol models.",
+      "category": "Ignition",
+      "vehicleMatch": {
+        "make": "Audi",
+        "model": "A3",
+        "generation": "8P",
+        "yearMin": 2003,
+        "yearMax": 2012,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.25,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.58
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 40,
+          "partsMax": 120,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.90,
+      "sampleSize": 18000
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "rules": [
+    {
+      "ruleId": "BMW-E87-001",
+      "ruleName": "N47 Timing Chain Failure",
+      "description": "N47 diesel timing chain and tensioner wear causing rattling and potential catastrophic engine failure.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "1 Series",
+        "generation": "E87",
+        "yearMin": 2007,
+        "yearMax": 2011,
+        "engineCodes": ["N47D20A", "N47D20C"],
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "mileageMax": 180000,
+        "peakMileage": 100000
+      },
+      "probability": {
+        "base": 0.28,
+        "mileageMultiplier": 0.005,
+        "maxProbability": 0.85
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 800,
+          "partsMax": 1400,
+          "labourHoursMin": 8,
+          "labourHoursMax": 14
+        }
+      },
+      "severity": 5,
+      "isRecall": false,
+      "dataSource": "MOT/Workshop Data Analysis",
+      "confidence": 0.93,
+      "sampleSize": 18000,
+      "tags": ["timing", "chain", "N47", "catastrophic"]
+    },
+    {
+      "ruleId": "BMW-E87-002",
+      "ruleName": "Swirl Flap Failure",
+      "description": "Intake manifold swirl flaps can break and debris enters engine causing serious damage. Common on diesels.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "1 Series",
+        "generation": "E87",
+        "yearMin": 2004,
+        "yearMax": 2011,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.16,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 350,
+          "partsMax": 750,
+          "labourHoursMin": 3,
+          "labourHoursMax": 6
+        }
+      },
+      "severity": 4,
+      "dataSource": "Workshop Data",
+      "confidence": 0.85,
+      "sampleSize": 9000
+    },
+    {
+      "ruleId": "BMW-E87-003",
+      "ruleName": "VANOS Solenoid Issues",
+      "description": "Variable valve timing solenoids wear causing rough running, poor fuel economy, and reduced performance.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "1 Series",
+        "generation": "E87",
+        "yearMin": 2004,
+        "yearMax": 2011,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 150,
+          "partsMax": 350,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.86,
+      "sampleSize": 10000
+    },
+    {
+      "ruleId": "BMW-E87-004",
+      "ruleName": "Electric Water Pump Failure",
+      "description": "Electric coolant pump fails causing overheating and potential head gasket damage.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "1 Series",
+        "generation": "E87",
+        "yearMin": 2004,
+        "yearMax": 2011,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "mileageMax": 140000
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.004,
+        "maxProbability": 0.65
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 250,
+          "partsMax": 500,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.88,
+      "sampleSize": 12000
+    },
+    {
+      "ruleId": "BMW-E87-005",
+      "ruleName": "Rear Subframe Mounting Points",
+      "description": "Rear subframe mounting points crack through body causing MOT failure. Common UK corrosion issue.",
+      "category": "Body",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "1 Series",
+        "generation": "E87",
+        "yearMin": 2004,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "ageMin": 8
+      },
+      "probability": {
+        "base": 0.15,
+        "ageMultiplier": 0.03,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 500,
+          "partsMax": 1500,
+          "labourHoursMin": 6,
+          "labourHoursMax": 15
+        }
+      },
+      "severity": 4,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.82,
+      "sampleSize": 6000,
+      "motDefectCodes": ["6.1.B.2"]
+    },
+    {
+      "ruleId": "BMW-E87-006",
+      "ruleName": "Injector Seal Leak",
+      "description": "Diesel fuel injector seals leak causing black tar build-up and potential fire hazard.",
+      "category": "Fuel System",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "1 Series",
+        "generation": "E87",
+        "yearMin": 2004,
+        "yearMax": 2011,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 150,
+          "partsMax": 400,
+          "labourHoursMin": 2,
+          "labourHoursMax": 5
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.85,
+      "sampleSize": 7000
+    },
+    {
+      "ruleId": "BMW-E87-007",
+      "ruleName": "Steering Rack Wear",
+      "description": "Steering rack develops play causing wandering steering and knocking. Common MOT advisory.",
+      "category": "Steering",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "1 Series",
+        "generation": "E87",
+        "yearMin": 2004,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "mileageMin": 70000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.16,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.018,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 300,
+          "partsMax": 800,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data",
+      "confidence": 0.83,
+      "sampleSize": 8000
+    },
+    {
+      "ruleId": "BMW-E87-008",
+      "ruleName": "Rear Shock Absorber Failure",
+      "description": "Rear shock absorbers leak and fail causing poor handling and MOT failure.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "1 Series",
+        "generation": "E87",
+        "yearMin": 2004,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.60
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 150,
+          "partsMax": 350,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.88,
+      "sampleSize": 14000,
+      "motDefectCodes": ["2.7.3"]
+    },
+    {
+      "ruleId": "BMW-E87-009",
+      "ruleName": "DPF Sensor Failure",
+      "description": "Diesel particulate filter pressure sensor fails causing warning lights and regeneration issues.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "1 Series",
+        "generation": "E87",
+        "yearMin": 2007,
+        "yearMax": 2011,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.15,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.45
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 300,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.82,
+      "sampleSize": 6000
+    },
+    {
+      "ruleId": "BMW-E87-010",
+      "ruleName": "Coil Spring Breakage",
+      "description": "Front and rear coil springs prone to snapping on UK roads. Common MOT failure.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "BMW",
+        "model": "1 Series",
+        "generation": "E87",
+        "yearMin": 2004,
+        "yearMax": 2011
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.022,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 200,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.90,
+      "sampleSize": 16000,
+      "motDefectCodes": ["2.4.A.2a"]
+    }
+  ]
+}

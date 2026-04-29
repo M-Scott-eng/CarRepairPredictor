@@ -1,0 +1,25 @@
+# Car Repair Predictor - robots.txt
+# https://carrepairpredictor.co.uk
+
+User-agent: *
+Allow: /
+
+# Disallow administrative and private paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /account/
+Disallow: /subscription/success
+
+# Allow search engines to find sitemap
+Sitemap: https://carrepairpredictor.co.uk/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Google-specific
+User-agent: Googlebot
+Allow: /
+
+# Bing-specific
+User-agent: Bingbot
+Allow: /

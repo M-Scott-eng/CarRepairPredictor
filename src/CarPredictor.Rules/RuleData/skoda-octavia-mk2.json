@@ -1,0 +1,364 @@
+{
+  "rules": [
+    {
+      "ruleId": "SKODA-OCTAVIA-MK2-001",
+      "ruleName": "DSG Mechatronic Unit Failure",
+      "description": "DSG dual-clutch gearbox mechatronic unit can fail causing jerky shifts or complete loss of drive.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Skoda",
+        "model": "Octavia",
+        "generation": "Mk2",
+        "yearMin": 2004,
+        "yearMax": 2013,
+        "transmissions": ["DSG", "Automatic"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "mileageMax": 160000,
+        "peakMileage": 100000
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.62
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 800,
+          "partsMax": 1800,
+          "labourHoursMin": 4,
+          "labourHoursMax": 8
+        }
+      },
+      "severity": 4,
+      "isRecall": false,
+      "dataSource": "Workshop Data / Owner Reports",
+      "confidence": 0.90,
+      "sampleSize": 18000,
+      "tags": ["dsg", "mechatronic", "VAG"]
+    },
+    {
+      "ruleId": "SKODA-OCTAVIA-MK2-002",
+      "ruleName": "Timing Chain Tensioner (2.0 TSI)",
+      "description": "EA888 2.0 TSI engines suffer from timing chain tensioner failure. Can cause catastrophic damage.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Skoda",
+        "model": "Octavia",
+        "generation": "Mk2",
+        "yearMin": 2008,
+        "yearMax": 2013,
+        "engineCodes": ["CCZA", "CAWB"],
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "mileageMax": 130000,
+        "peakMileage": 80000
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.005,
+        "maxProbability": 0.72
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 600,
+          "partsMax": 1200,
+          "labourHoursMin": 6,
+          "labourHoursMax": 10
+        }
+      },
+      "severity": 5,
+      "dataSource": "VAG TSB / Workshop Data",
+      "confidence": 0.92,
+      "sampleSize": 15000,
+      "tags": ["timing", "chain", "tensioner", "catastrophic"]
+    },
+    {
+      "ruleId": "SKODA-OCTAVIA-MK2-003",
+      "ruleName": "PCV Valve / Breather System",
+      "description": "PCV diaphragm fails causing oil consumption, rough idle, and check engine light.",
+      "category": "Engine",
+      "vehicleMatch": {
+        "make": "Skoda",
+        "model": "Octavia",
+        "generation": "Mk2",
+        "yearMin": 2004,
+        "yearMax": 2013,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.28,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.62
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 80,
+          "partsMax": 200,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.88,
+      "sampleSize": 14000
+    },
+    {
+      "ruleId": "SKODA-OCTAVIA-MK2-004",
+      "ruleName": "Water Pump Failure",
+      "description": "Plastic water pump impeller degrades causing coolant leak or overheating.",
+      "category": "Cooling",
+      "vehicleMatch": {
+        "make": "Skoda",
+        "model": "Octavia",
+        "generation": "Mk2",
+        "yearMin": 2004,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.20,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 150,
+          "partsMax": 350,
+          "labourHoursMin": 3,
+          "labourHoursMax": 5
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.86,
+      "sampleSize": 12000
+    },
+    {
+      "ruleId": "SKODA-OCTAVIA-MK2-005",
+      "ruleName": "EGR Valve Failure (TDI)",
+      "description": "EGR valve clogs with carbon causing loss of power and engine management light.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Skoda",
+        "model": "Octavia",
+        "generation": "Mk2",
+        "yearMin": 2004,
+        "yearMax": 2013,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 60000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.26,
+        "mileageMultiplier": 0.003,
+        "ageMultiplier": 0.02,
+        "maxProbability": 0.62
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 180,
+          "partsMax": 450,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT/Workshop Data",
+      "confidence": 0.88,
+      "sampleSize": 16000
+    },
+    {
+      "ruleId": "SKODA-OCTAVIA-MK2-006",
+      "ruleName": "DPF Regeneration Issues",
+      "description": "Diesel particulate filter blocks on short journeys causing limp mode and warning lights.",
+      "category": "Emissions",
+      "vehicleMatch": {
+        "make": "Skoda",
+        "model": "Octavia",
+        "generation": "Mk2",
+        "yearMin": 2007,
+        "yearMax": 2013,
+        "fuelTypes": ["Diesel"]
+      },
+      "conditions": {
+        "mileageMin": 50000
+      },
+      "probability": {
+        "base": 0.22,
+        "mileageMultiplier": 0.002,
+        "maxProbability": 0.50
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 400,
+          "partsMax": 1400,
+          "labourHoursMin": 2,
+          "labourHoursMax": 4
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.87,
+      "sampleSize": 13000
+    },
+    {
+      "ruleId": "SKODA-OCTAVIA-MK2-007",
+      "ruleName": "Front Lower Wishbone",
+      "description": "Front lower wishbone bushes and ball joints wear causing knocking and MOT failure.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Skoda",
+        "model": "Octavia",
+        "generation": "Mk2",
+        "yearMin": 2004,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.28,
+        "mileageMultiplier": 0.004,
+        "ageMultiplier": 0.022,
+        "maxProbability": 0.68
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 100,
+          "partsMax": 260,
+          "labourHoursMin": 1.5,
+          "labourHoursMax": 3
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.92,
+      "sampleSize": 22000,
+      "motDefectCodes": ["2.4.G.2"]
+    },
+    {
+      "ruleId": "SKODA-OCTAVIA-MK2-008",
+      "ruleName": "Rear Coil Spring Breakage",
+      "description": "Rear coil springs prone to snapping on UK roads. Common MOT failure.",
+      "category": "Suspension",
+      "vehicleMatch": {
+        "make": "Skoda",
+        "model": "Octavia",
+        "generation": "Mk2",
+        "yearMin": 2004,
+        "yearMax": 2013
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 5
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.022,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 60,
+          "partsMax": 150,
+          "labourHoursMin": 1,
+          "labourHoursMax": 2
+        }
+      },
+      "severity": 2,
+      "dataSource": "MOT Data Analysis",
+      "confidence": 0.90,
+      "sampleSize": 18000,
+      "motDefectCodes": ["2.4.A.2a"]
+    },
+    {
+      "ruleId": "SKODA-OCTAVIA-MK2-009",
+      "ruleName": "Ignition Coil Pack Failure",
+      "description": "Ignition coils fail causing misfires and check engine light. Common on all petrol models.",
+      "category": "Ignition",
+      "vehicleMatch": {
+        "make": "Skoda",
+        "model": "Octavia",
+        "generation": "Mk2",
+        "yearMin": 2004,
+        "yearMax": 2013,
+        "fuelTypes": ["Petrol"]
+      },
+      "conditions": {
+        "mileageMin": 50000,
+        "ageMin": 4
+      },
+      "probability": {
+        "base": 0.24,
+        "mileageMultiplier": 0.003,
+        "maxProbability": 0.55
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 40,
+          "partsMax": 110,
+          "labourHoursMin": 0.5,
+          "labourHoursMax": 1
+        }
+      },
+      "severity": 2,
+      "dataSource": "Workshop Data",
+      "confidence": 0.90,
+      "sampleSize": 20000
+    },
+    {
+      "ruleId": "SKODA-OCTAVIA-MK2-010",
+      "ruleName": "Dual Mass Flywheel Failure",
+      "description": "Dual mass flywheel wears causing juddering on take-off and rattling at idle.",
+      "category": "Transmission",
+      "vehicleMatch": {
+        "make": "Skoda",
+        "model": "Octavia",
+        "generation": "Mk2",
+        "yearMin": 2004,
+        "yearMax": 2013,
+        "transmissions": ["Manual"]
+      },
+      "conditions": {
+        "mileageMin": 80000,
+        "ageMin": 6
+      },
+      "probability": {
+        "base": 0.18,
+        "mileageMultiplier": 0.002,
+        "ageMultiplier": 0.015,
+        "maxProbability": 0.52
+      },
+      "costs": {
+        "UK": {
+          "partsMin": 350,
+          "partsMax": 700,
+          "labourHoursMin": 4,
+          "labourHoursMax": 7
+        }
+      },
+      "severity": 3,
+      "dataSource": "Workshop Data",
+      "confidence": 0.86,
+      "sampleSize": 12000
+    }
+  ]
+}
